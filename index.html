@@ -294,16 +294,13 @@ const results = data.results.web;
 rc.innerHTML+=reuso;
 
       });
-      puter.ai.chat(`you are search engine  agent   query:${input} and the search results are:${dato} say information in detail and explain it to user   dont use mark down and   you are search engine called arabinum and if no search results respond you self and dont explain every result just say the thing the user you think is actually searching for (summary) or how to (focus on query ) and be like  google search summary  dont depend  only on results say what u know and dont say results what are` , { model: "gpt-5.4-nano" })
-    .then(response => {
-        out.innerText=response;
-    });
+      //puter.ai.chat(`you are search engine  agent   query:${input} and the search results are:${dato} say information in detail and explain it to user   dont use mark down and   you are search engine called arabinum and if no search results respond you self and dont explain every result just say the thing the user you think is actually searching for (summary) or how to (focus on query ) and be like  google search summary  dont depend  only on results say what u know and dont say results what are` , { model: "gpt-5.4-nano" })
+    //.then(response => {
+      //  out.innerText=response;
+   //});
     
  
     
-
-
-  }
 const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=eg`;
 const options = {
 	method: 'GET',
@@ -317,11 +314,32 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	console.log(result);
+  var vt=result.contents;
+for(const item of vt){
+  var xox=item.video;
+  var videox=`
+  <div class="flex justify-center">
+    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <a href="${xox.url}">
+            <img src='${xox.thumbnails[0].url}'class='h-10 rad-2' >
+        </a>
+        <div class="p-6">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">${video.title}</h5>
+            <p class="text-gray-700 text-base mb-4">
+                ${xox.descriptionSnippet}
+            </p>
+        </div>
+    </div>
+</div>`
+
+}
 } catch (error) {
 	console.error(error);
 }
 
+
+
+  }
 
   
   
