@@ -304,30 +304,20 @@ rc.innerHTML+=reuso;
 
 
   }
-const url = 'https://youtube138.p.rapidapi.com/search/';
+const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=eg`;
 const options = {
-	method: 'POST',
+	method: 'GET',
 	headers: {
 		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
 		'x-rapidapi-host': 'youtube138.p.rapidapi.com',
 		'Content-Type': 'application/json'
-	},
-	body: {
-		id: 'UCJ5v_MCY6GNUBTO8-D3XoAg',
-	q:input,
-		hl: 'ar',
-		gl: 'eg'
 	}
 };
 
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-for  (const item of result){
-var ctuu=`${item}`;
-out.innerHTML+=ctuu;
-}
-
+	console.log(result);
 } catch (error) {
 	console.error(error);
 }
