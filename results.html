@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
+<script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+                        <script src="https://js.puter.com/v2/"></script>
+
+                 
+  </head>
+</head>
+<body>
+    <div  h-5 style="width: 95%; "rows b-gray shadow rad-50 nof mb-4 mt-2>
+        <input  center type="search" w-90p h-4 rad-50  m-3  placeholder="search arabinum..." p-2 id="inputo">
+        <button btn="white" id="white">search</button>
+        </div>
+       
+<div id="rc" w-70p style="position: absolute;right:5px">
+ <p id="out"style=""></p>
+</div>
+
+    
+ 
+</body>
+</html>
+<script type="module">
+    var kiri='';
+        var out=document.getElementById('out');
+ var rc=document.getElementById('rc');
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+const urlParams = new URLSearchParams(window.location.search);
+    var query = urlParams.get('q');
+
+    const {data:info,error:ex}=await supabase.from('console').select('*').or(`title.ilike.%${query}%,des.ilike.%${query}%`);
+    for(const result of info){
+        const reso=`
+        <a href='${result.domain}'>
+        <div   w-80p m-2  white   center auto nof style='margin-bottom:10px;  border: 2px  solid rgba(128, 128, 128, 0.558);'  >
+
+<div w-100p h-100p columns style='padding:14px' >
+    <h1 center  tbold style="font-size: 20px;;" monospace tblue>${result.title}</h1>
+    <p center  >${result.des}</p>
+   
+</div>
+
+        </div>
+        
+        </a>
+        
+        `
+rc.innerHTML+=reso;
+var nono=`
+       result ={
+       domain:${result.domain}
+       title:${result.title}
+       
+       description:${result.des}
+       }
+        
+        `
+        var dato=''
+       dato=dato+nono;
+
+    }
+
+
+kiri=query;
+puter.ai.chat(`you are search engine  agent   query:${kiri} and the search results are:${dato} say information in detail and explain it to user   dont use mark down and  talk only in arabic even if query is not arabic you are search engine called arabinum and if no search results respond you self`, { model: "gpt-5.4-nano" })
+    .then(response => {
+        out.innerText=response;
+    });
+
+    
+
+const btns = document.querySelectorAll('.btn');
+
+
+async function f(val,id){
+    const { data, error } = await supabase
+  .from('products')
+  .update({ upvotes: val })
+  .eq('id', id);
+}
+
+
+  var white =document.getElementById('white');
+  white.onclick= async function(){
+    var input =document.getElementById('inputo').value;
+  rc.innerHTML='';
+    const {data:echo,error:exo}=await supabase.from('console').select('*').or(`title.ilike.%${input}%,des.ilike.%${input}%`);
+  
+    for(const result of echo){
+        var reuso=`
+        <a href='https://${result.domain}'>
+        <div   w-80p m-2  white   center auto nof style='margin-bottom:10px;  border: 2px  solid rgba(128, 128, 128, 0.558);'  >
+
+<div w-100p h-100p columns style='padding:14px' >
+    <h1 center  tbold style="font-size: 20px;;" monospace tblue>${result.title}</h1>
+    <p center  >${result.des}</p>
+   
+</div>
+
+        </div>
+        
+        </a>
+        
+        `
+         var nono=`
+       result ={
+       domain:${result.domain}
+       title:${result.title}
+       
+       description:${result.des}
+       }
+        
+        `
+        var dato=''
+       dato=dato+nono;
+rc.innerHTML+=reuso;
+
+    }
+
+kiri=input;
+puter.ai.chat(`you are search engine  agent   query:${kiri} and the search results are:${dato} say information in detail and explain it to user   dont use mark down and  talk only in arabic even if query is not arabic you are search engine called arabinum and if no search results respond you self`, { model: "gpt-5.4-nano" })
+    .then(response => {
+        out.innerText=response;
+    });
+  }
+
+
+</script>

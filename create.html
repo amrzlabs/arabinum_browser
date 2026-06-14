@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
+        <title>اسطرلاب |اول منصة اطلاق منتحات عربية </title>
+</head>
+<body columns>
+    <div w-80p syellow yellow rad-2 min-h-50  m-5 flex-column handdrawn>
+
+             <h1  center twhite style="font-size: 40px;" m-1>اطلق منتجك ليراه العالم🎀</h1>
+             <div min-h-40  columns w-80p m-5>
+<input type="text" white placeholder="اسم المنتج" h-4 p-1 rad-1 w-90p w-full handdrawn maxlength="50" id="productName" mb-2>
+<input type="text" white maxlength="50" placeholder="وصف قصير  جملة واحدة" h-6 p-1 rad-1 w-90p w-full  handdrawn id="shortDescription"mb-2> 
+<input type="text" white placeholder="   الرابط "  h-6 p-1 rad-1 w-90p w-full  handdrawn id="productUrl"mb-2>
+<textarea type="text" white  maxlength="500" placeholder=" شرح  قصير في حدود 5 اسطر" h-15 p-1 rad-1 w-90p w-full handdrawn  id="longDescription"mb-2></textarea>
+<label for="myimg">اللوجو (مربع) :</label>
+<input type="file" white placeholder=" اللوجو  " h-3 p-1 rad-1 w-90p w-full  handdrawn   id="myimg"mb-2>
+<label for="displayImageInput"> صورة رئيسية</label>
+<input type="file" white placeholder="    صورة عرض واحدة   " h-5 p-1 rad-1 w-90p w-full handdrawn id="displayImageInput"mb-2>
+             </div>
+<button btn="white" m-2 tyellow rad-1 white id="submitButton" >اطلق الان 🪄</button>
+    </div> 
+</body>
+</html><script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+
+
+    async function getAuthenticatedUser() {
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (!user) {
+            // إذا لم يوجد مستخدم، نقوم بعملية تسجيل الدخول
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: { redirectTo: window.location.href }
+            });
+            if (error) alert('خطأ في تسجيل الدخول: ' + error.message);
+            return null;
+        }
+        return user; // نعيد بيانات المستخدم إذا كان مسجلاً
+    }
+
+    var submitButton = document.getElementById('submitButton');
+
+    submitButton.onclick = async function () {
+        // نتحقق من المستخدم عند الضغط على الزر
+        const user = await getAuthenticatedUser();
+        if (!user) return; // توقف إذا لم يكن مسجلاً
+
+        var nameValue = document.getElementById('productName').value;
+        var descriptionValue = document.getElementById('longDescription').value;
+        var urlValue = document.getElementById('productUrl').value;
+        var shortDescValue = document.getElementById('shortDescription').value;
+        var displayImageInput = document.getElementById('displayImageInput');
+        var myimg = document.getElementById('myimg');
+        
+        const file = myimg.files[0];
+        const displayFile = displayImageInput.files[0];
+        
+        if (!file) {
+            alert("يرجى اختيار صورة اللوجو");
+            return;
+        }
+
+        var newLogoName = Date.now();
+        const { error: imgerror } = await supabase.storage.from('logo').upload(`public/${newLogoName}`, file);
+        
+        if (imgerror) {
+            alert(imgerror.message);
+            return;
+        }
+        
+        const { data: { publicUrl } } = supabase.storage.from('logo').getPublicUrl(`public/${newLogoName}`);
+
+        var newImageName = 'headerimg' + Date.now();
+        let displayImageUrl = '';
+        if (displayFile) {
+            await supabase.storage.from('logo').upload(`public/${newImageName}`, displayFile);
+            const { data: { publicUrl: xvUrl } } = supabase.storage.from('logo').getPublicUrl(`public/${newImageName}`);
+            displayImageUrl = xvUrl;
+        }
+const now = new Date();
+
+
+const year = now.getFullYear();
+
+
+const month = now.getMonth() + 1;
+
+const day = now.getDate();
+
+
+var  todayDate = `${year}/${month}/${day}`;
+
+
+        const { error } = await supabase.from('products').insert({
+            name: nameValue,
+            des: descriptionValue,
+            logo: publicUrl,
+            url: urlValue,
+            d2: shortDescValue,
+            img1: displayImageUrl,
+            founder: user.email ,
+            upvotes:0,
+            comments_num:0,
+            day:todayDate
+        });
+
+        if (error) {
+            alert(JSON.stringify(error, null, 2));
+        } else {
+            window.location.href = "/index.html";
+        }
+    };
+</script>

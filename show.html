@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe w-100p h-100p src="" id="iframe"></iframe>
+</body>
+
+</html>
+<script>
+    var iframe=document.getElementById('iframe')
+    const urlParams = new URLSearchParams(window.location.search);
+    var src = urlParams.get('d');
+    iframe.src=src;
+
+</script>

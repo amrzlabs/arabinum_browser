@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+                  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
+<script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+                 
+                         <script src="https://js.puter.com/v2/"></script>
+                         <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+                   <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
+                
+   
+    <style>
+        @media(max-width:780px){
+[data-hidden]{
+    display: none;
+}
+[data-full-width]{
+    width: 100%;
+}
+        }
+        
+    </style>
+    
+    <style>
+         @media(min-width:700px){
+
+  [data-max-size]{
+            height: 100%;
+           width: 20%;
+           }
+             [data-flex-column]{
+            display: flex;
+            flex-direction: column;
+           }
+         
+          }
+    [data-row-center]{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+           }
+      
+        [data-hide-desktop]{
+                display: none;
+             }
+
+        @media(max-width:700px){
+
+            [data-hide-mobile]{
+                display: none;
+            }
+             [data-hide-desktop]{
+                display: block;
+            }
+           [data-square-size]{
+            height: 10rem;
+            width:10rem;
+
+           }
+           [data-max-size]{
+            max-height: 300px;
+
+           }
+           [data-flex-column]{
+            display: flex;
+            flex-direction: row;
+           }
+           [data-row-center]{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           }
+        }
+    </style>
+    
+</head>
+
+  </head>
+
+</head>
+<body>
+
+<div class="bg-white">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img  circle src="https___dev-to-uploads.s3.amazonaws.com_uploads_organization_profile_image_12983_47b5c8df-efe2-4e9c-89f3-d341686ab2f1.webp" alt="" class="h-12 w-auto" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/console" class="text-sm/6 font-semibold text-gray-900">console</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">about</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">github</a>
+        <a href="#" class="text-sm/6 font-semibold text-gray-900">blog</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img src="https___dev-to-uploads.s3.amazonaws.com_uploads_organization_profile_image_12983_47b5c8df-efe2-4e9c-89f3-d341686ab2f1.webp" alt="" class="h-8 w-auto" />
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Products</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">github</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">about</a>
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">blog</a>
+                </div>
+                <div class="py-6">
+                 
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div style="" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[blue] to-[white] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" ></div>
+    </div>
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      
+      <div class="text-center">
+        <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl title" >Arabinum</h1>
+        <div  h-5 style="width: 95%; "rows>
+        <input  center type="search" w-90p h-4 rad-50  m-3 b-gray shadow placeholder="search arabinum..." p-2 id="input">
+        <button btn="white" id="white">search</button>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+  <div flex-auto w-full >
+   <p style=" white-space: pre;"id='out' nof w-100p>
+          
+        </p>
+        <div  id="rc" w-100p    >
+         
+        </div>
+       
+        </div>
+</body>
+</html>
+<script type="module">
+   import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
+var rc=document.getElementById('rc');
+    const supabase = createClient(supabaseUrl, supabaseKey);
+  var white =document.getElementById('white');
+  white.onclick= async function(){
+    rc.innerHTML='';
+    var input =document.getElementById('input').value;
+      var out =document.getElementById('out');
+const { data, error } = await supabase.functions.invoke('search', {
+  body: { query: input },
+})
+console.log(data)
+const results = data.results.web;
+    var dato='';
+        var xxoo='';
+    results.forEach(item => {
+
+              
+     var reuso=`
+
+   <a href='${item.url}'>
+
+        <div w-100p h-40 white columns p-3 center> 
+
+
+
+ 
+        <div id="space" w-100p  min-h-20 center>
+
+            
+        <div  rad-2 b-gray  w-100p m-2 rad-1 white   center data-row-center nof style='margin-bottom:10px' >
+<img src="${item.thumbnail_url}" w-100p h-full   data-max-size center >
+<div w-100p h-100p columns ml-1 p-1 >
+    <h1 center  tbold style="font-size: 25px;;" monospace tblue>${item.title}</h1>
+    <p center style="font-size: 17px;;" >${item.description}</p>
+</div>
+
+        </div>
+        </a>
+      
+        
+     
+
+
+
+        `
+       dato=dato+`
+
+       result[{
+       title:${item.title},
+       desecription:${item.description},
+       url:${item.url},
+      }]
+      `;
+rc.innerHTML+=reuso;
+
+      });
+      puter.ai.chat(`you are search engine  agent   query:${input} and the search results are:${dato} say information in detail and explain it to user   dont use mark down and   you are search engine called arabinum and if no search results respond you self and dont explain every result just say the thing the user you think is actually searching for (summary) or how to (focus on query ) and be like  google search summary  dont depend  only on results say what u know and dont say results what are` , { model: "gpt-5.4-nano" })
+    .then(response => {
+        out.innerText=response;
+    });
+    
+ 
+        puter.ai.txt2img(`A picture  demonstarting this search query :${input} and make sure it doesnt have any haram content please no humans also`, true).then((image)=>{
+            rc.appendChild(image);
+        });
+
+
+  }
+
+
+
+  
+  
+</script>
