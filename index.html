@@ -352,7 +352,7 @@ const optionso = {
 
 try {
 	const response = await fetch(urlx, optionso);
-	const result = await response.text().result;
+	const result = await response.json().result;
 	for(const item of result){
     var block=`
     <a class="flex px-3 py-3" href=' ${item.url}'>
