@@ -320,7 +320,7 @@ for(const item of vt){
   var videox=`
   <div class="flex justify-center">
     <div class="rounded-lg shadow-lg bg-white max-w-sm">
-        <a href="${xox.url}">
+        <a href="https://www.youtube.com/watch?v=${xox.id}">
             <img src='${xox.thumbnails[0].url}'class='h-10 rad-2' >
         </a>
         <div class="p-6">
@@ -331,7 +331,8 @@ for(const item of vt){
         </div>
     </div>
 </div>`
-
+rc.innerHTML+=videox;
+console.log(xox)
 }
 } catch (error) {
 	console.error(error);
