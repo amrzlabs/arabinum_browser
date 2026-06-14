@@ -205,6 +205,7 @@ const results = data.results.web;
               
      var reuso=`
 
+<a href='${item.url}'>
 
     <div class="bg-white dark:bg-gray-800 border linkedin-border rounded-lg shadow-sm max-w-xl w-full overflow-hidden mb-5">
       <div class="p-4">
@@ -241,7 +242,7 @@ const results = data.results.web;
         <!-- Media (Optional - Example Image) -->
         <div class="mb-3 -mx-4 sm:mx-0 sm:rounded-lg overflow-hidden">
              <img src="${item.original_thumbnail_url}"
-                 alt="Post media content" class="w-full object-cover">
+                  class="w-full object-cover">
         </div>
 
         <!-- Engagement Stats -->
@@ -279,7 +280,7 @@ const results = data.results.web;
 
       </div>
     </div>
-
+</a>
 
         `
        dato=dato+`
