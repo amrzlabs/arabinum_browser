@@ -386,7 +386,7 @@
   
              var input =document.getElementById('input').value;
    
-        puter.ai.chat(`respond to the word or sentence do u think that user is tring to search about witjout any extra text in another way complete  these sentence ${input}`, { model: "gemini-2.5-flash-lite" }).then(response => {
+        puter.ai.chat(`respond to the word or sentence do u think that user is tring to search about witjout any extra text in another way complete  these sentence: ${input}`, { model: "gemini-2.5-flash-lite" }).then(response => {
         grok.innerText=`search for :${response}`;
     });
   
@@ -394,7 +394,9 @@
   }
 
   grok.onclick=function(){
+    input.value=grok.innerText;
     white.click();
+
   }
     
   </script>
