@@ -303,42 +303,40 @@ rc.innerHTML+=reuso;
     
  
     
-// const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=eg`;
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
-// 		'x-rapidapi-host': 'youtube138.p.rapidapi.com',
-// 		'Content-Type': 'application/json'
-// 	}
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.json();
-//   var vt=result.contents;
-// for(const item of vt){
-//   var xox=item.video;
-//   var videox=`
-//   <div class="flex justify-center" columns>
-//     <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 "b-black>
-//         <a href="https://www.youtube.com/watch?v=${xox.videoId}"w-full h-40p center>
-//             <img src='${xox.thumbnails[0].url}'class=' rad-2' w-90p h-100p >
-//         </a>
-//         <div class="p-6">
-//             <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
-//             <p class="text-gray-700 text-base mb-4">
-//                 ${xox.descriptionSnippet}
-//             </p>
-//         </div>
-//     </div>
-// </div>`
-// out.innerHTML+=videox;
-// console.log(xox)
-// }
-// } catch (error) {
-// 	console.error(error);
-// }
+ const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=eg`;
+ const options = {
+ 	method: 'GET',
+ 	headers: {
+ 		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
+ 		'Content-Type': 'application/json'
+ 	}
+ };
+try {
+ 	const response = await fetch(url, options);
+ 	const result = await response.json();
+   var vt=result.contents;
+ for(const item of vt){
+   var xox=item.video;
+   var videox=`
+   <div class="flex justify-center" columns>
+     <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 "b-black>
+         <a href="https:www.youtube.com/watch?v=${xox.videoId}"w-full h-40p center>
+             <img src='${xox.thumbnails[0].url}'class=' rad-2' w-90p h-100p >
+         </a>
+         <div class="p-6">
+             <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
+             <p class="text-gray-700 text-base mb-4">
+                 ${xox.descriptionSnippet}
+             </p>
+         </div>
+     </div>
+ </div>`
+ out.innerHTML+=videox;
+ console.log(xox)
+ }
+ } catch (error) {
+ 	console.error(error);
+ }
 var reso=document.getElementById('reso');
 const urlx = `https://arxiv-research-paper-search.p.rapidapi.com/arxiv_search?search_term=${input}&start=0&date_type=Submission%20Date&field=All%20fields&num_results=3`;
 const optionso = {
