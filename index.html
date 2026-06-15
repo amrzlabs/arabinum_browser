@@ -8,21 +8,15 @@
   <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
                           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WFG2XVDF');</script>
-<!-- End Google Tag Manager -->
+                  
                           <script src="https://js.puter.com/v2/"></script>
                           <head>
-                            
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
                     <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
-                  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+                  
     
       <style>
           @media(max-width:780px){
@@ -166,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         
         <div class="text-center">
-          <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl title" >Arabinum</h1>
+          <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl title"m-3 >Arabinum</h1>
 
           <div  h-5 style="width: 95%; "rows>
           <input  center type="search" w-90p h-4 rad-50  m-3 b-gray shadow placeholder="search arabinum..." p-2 id="input">
@@ -329,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="flex justify-center" columns>
       <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 "b-black>
           <a href="https://youtube.com/watch?v=${xox.videoId}"w-full h-40p center>
-              <img src='${xox.thumbnails[0].url}'class=' rad-2' w-90p h-100p >
+              <img src='${xox.thumbnails[0].url}'class=' rad-2 mt-2' w-90p h-100p center  >
           </a>
           <div class="p-6">
               <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
@@ -345,47 +339,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   } catch (error) {
     console.error(error);
   }
-  var reso=document.getElementById('reso');
-  const urlx = `https://arxiv-research-paper-search.p.rapidapi.com/arxiv_search?search_term=${input}&start=0&date_type=Submission%20Date&field=All%20fields&num_results=3`;
-  const optionso = {
-    method: 'GET',
-    headers: {
-      'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
-      'x-rapidapi-host': 'arxiv-research-paper-search.p.rapidapi.com',
-      'Content-Type': 'application/json'
-    }
-  };
 
-  try {
-    const response = await fetch(urlx, optionso);
-    const result = await response.json();
-      console.log(result)
-    for(const item of result.result){
-      var block=`
-      <a class="flex px-3 py-3" href=' ${item.url}'>
-      <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          
-          <div class="px-6 py-4">
-            
-              <p class="text-gray-700 text-base">
-                ${item.title}
-              </p>
-          </div>
-          <div class="px-6 py-4">
-              
-          </div>
-      </div>
-  </a>
-      `;
-  out.innerHTML+=block;
-  console.log(item)
-    }
-    console.log(result)
-  } catch (error) {
-    console.error(error);
-  }
-
-    }
  var grok=document.getElementById('grok');
+}
  
   </script>
