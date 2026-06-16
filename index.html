@@ -302,7 +302,7 @@ const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
 
 
 
-const url = `https://www.googleapis.com/youtube/v3/search?q=${encodeURIComponent(input)}&type=video&key=${apiKey}`;
+const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=${apiKey}&maxResults=10`;
 
 try {
   
