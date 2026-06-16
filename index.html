@@ -296,7 +296,7 @@ display: flex;
       
   
   try {
-     const { data, error } = await supabase.functions.invoke('search', {
+     const { data, error } = await supabase.functions.invoke('youtube', {
     body: { query: input },
            body: { ceo: ceor }
   })
