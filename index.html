@@ -302,7 +302,8 @@ display: flex;
   })
     console.log(data);
     z= await data.json();
-  for(const item of z){
+    zz=z.contents;
+  for(const item of zz){
     var xox=item.video;
     var videox=`
     <div class="flex justify-center" columns>
