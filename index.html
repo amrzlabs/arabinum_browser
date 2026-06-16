@@ -126,7 +126,33 @@ display: flex;
             
             <div class="flex justify-center mt-8 space-x-2">
                 <button class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-gray-800"id='white' > Search</button>
-                <button class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-gray-800">Win Freeing Lucky</button>
+          <select id="arabic" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-gray-800 outline-none cursor-pointer" >
+  <option value="DZ">Algeria</option>
+  <option value="BH">Bahrain</option>
+  <option value="KM">Comoros</option>
+  <option value="DJ">Djibouti</option>
+  <option value="EG" selected>Egypt</option>
+  <option value="IQ">Iraq</option>
+  <option value="JO">Jordan</option>
+  <option value="KW">Kuwait</option>
+  <option value="LB">Lebanon</option>
+  <option value="LY">Libya</option>
+  <option value="MR">Mauritania</option>
+  <option value="MA">Morocco</option>
+  <option value="OM">Oman</option>
+  <option value="PS">Palestine</option>
+  <option value="QA">Qatar</option>
+  <option value="SA">Saudi Arabia</option>
+  <option value="SO">Somalia</option>
+  <option value="SD">Sudan</option>
+  <option value="SY">Syria</option>
+  <option value="TN">Tunisia</option>
+  <option value="AE">United Arab Emirates</option>
+  <option value="YE">Yemen</option>
+</select>
+
+              
+              
             </div>
         </div>
 
@@ -262,11 +288,10 @@ display: flex;
   rc.innerHTML+=reuso;
 
         });
+  var ceo =document.getElementById('arabic').value;
 
       
-  
-      
-  const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=eg`;
+  const url = `https://youtube138.p.rapidapi.com/search/?q=${input}&hl=ar&gl=${ceo}`;
   const options = {
     method: 'GET',
     headers: {
