@@ -292,41 +292,48 @@ display: flex;
   rc.innerHTML+=reuso;
 
         });
-  var ceor =document.getElementById('arabic').value;
+
 
       
   
-  try {
-     const { data, error } = await supabase.functions.invoke('youtube', {
-    body: { query: input },
-           body: { ceo: ceor }
-  })
-    console.log(data);
-    z= await data.json();
-    zz=z.contents;
-  for(const item of zz){
-    var xox=item.video;
-    var videox=`
-    <div class="flex justify-center" columns>
-      <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 "b-black>
-          <a href="https://youtube.com/watch?v=${xox.videoId}"w-full h-40p center>
-              <img src='${xox.thumbnails[0].url}'class=' rad-2 mt-2' w-90p h-100p center  >
-          </a>
-          <div class="p-6">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
-              <p class="text-gray-700 text-base mb-4">
-                  ${xox.descriptionSnippet}
-              </p>
-          </div>
-      </div>
-  </div>`
-  out.innerHTML+=videox;
-  console.log(xox)
-  }
-  } catch (error) {
-  alert(error);
-  }
+var ceor = document.getElementById('arabic').value;
 
+try {
+    // 1. دمج القيم في كائن واحد داخل الـ body
+    const { data, error } = await supabase.functions.invoke('youtube', {
+        body: { query: input, ceo: ceor } 
+    });
+
+    if (error) throw error; // التأكد من عدم وجود خطأ من Supabase
+
+    console.log(data);
+    
+    // 2. إزالة السطر: z = await data.json(); (هذا هو سبب الخطأ)
+    // تعامل مع data مباشرةً
+    const zz = data.contents; 
+
+    for (const item of zz) {
+        var xox = item.video;
+        var videox = `
+        <div class="flex justify-center">
+          <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4">
+              <a href="https://youtube.com/watch?v=${xox.videoId}">
+                  <img src='${xox.thumbnails[0].url}' class='rad-2 mt-2'>
+              </a>
+              <div class="p-6">
+                  <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
+                  <p class="text-gray-700 text-base mb-4">
+                      ${xox.descriptionSnippet}
+                  </p>
+              </div>
+          </div>
+        </div>`;
+        out.innerHTML += videox;
+    }
+} catch (error) {
+    console.error(error);
+    alert("حدث خطأ: " + error.message);
+}
  var grok=document.getElementById('grok');
 }
  
