@@ -298,41 +298,52 @@ display: flex;
       
   
 var ceor = document.getElementById('arabic').value;
+const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
+
+
+// النطاق الجديد لـ Google (يستهلك 100 نقطة لكل عملية بحث)
+const url = `https://googleapis.com{encodeURIComponent(input)}&type=video&key=${apiKey}`;
 
 try {
-    // 1. دمج القيم في كائن واحد داخل الـ body
-    const { data, error } = await supabase.functions.invoke('youtube', {
-        body: { query: input, ceo: ceor } 
-    });
+  // استخدام fetch عادي بدون الـ headers المعقدة الخاصة بـ RapidAPI
+  const response = await fetch(url);
+  
+  if (!response.ok) {
+    throw new Error(`خطأ من اليوتيوب: ${response.status}`);
+  }
 
-    if (error) throw error; 
+  const result = await response.json();
+  
+  // في جوجل، النتائج تكون داخل مصفوفة اسمها items
+  const vt = result.items;
 
-    console.log(data);
-    
+  for (const item of vt) {
+    // استخراج بيانات الفيديو من المسارات الجديدة لجوجل
+    const title = item.snippet.title;
+    const description = item.snippet.description; // الوصف الجديد
+    const thumbnailUrl = item.snippet.thumbnails.high.url; // أعلى جودة متوفرة في البحث
+    const videoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
 
-    const zz = data; 
-
-    for (const item of zz) {
-        var xox = item.video;
-        var videox = `
-        <div class="flex justify-center">
-          <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4">
-              <a href="https://youtube.com/watch?v=${xox.videoId}">
-                  <img src='${xox.thumbnails[0].url}' class='rad-2 mt-2'>
-              </a>
-              <div class="p-6">
-                  <h5 class="text-gray-900 text-xl font-medium mb-2">${xox.title}</h5>
-                  <p class="text-gray-700 text-base mb-4">
-                      ${xox.descriptionSnippet}
-                  </p>
-              </div>
+    const videox = `
+    <div class="flex justify-center" columns>
+      <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 " b-black>
+          <a href="https://youtube.com/watch?v=${videoId}" w-full h-40p center>
+              <img src='${thumbnailUrl}' class='rad-2 mt-2' w-90p h-100p center>
+          </a>
+          <div class="p-6">
+              <h5 class="text-gray-900 text-xl font-medium mb-2">${title}</h5>
+              <p class="text-gray-700 text-base mb-4">
+                  ${description}
+              </p>
           </div>
-        </div>`;
-        out.innerHTML += videox;
-    }
+      </div>
+    </div>`;
+
+    out.innerHTML += videox;
+    console.log(item);
+  }
 } catch (error) {
-    console.error(error);
-    alert("حدث خطأ: " + error.message);
+  console.error("حدث خطأ أثناء جلب البيانات:", error);
 }
  var grok=document.getElementById('grok');
 }
