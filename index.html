@@ -189,11 +189,12 @@ display: flex;
   var rc=document.getElementById('rc');
       const supabase = createClient(supabaseUrl, supabaseKey);
     var white =document.getElementById('white');
+      var out =document.getElementById('out');
     white.onclick= async function(){
       rc.innerHTML='';
        out.innerHTML='';
       var input =document.getElementById('input').value;
-        var out =document.getElementById('out');
+      
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
