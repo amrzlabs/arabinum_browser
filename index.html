@@ -304,13 +304,12 @@ try {
         body: { query: input, ceo: ceor } 
     });
 
-    if (error) throw error; // التأكد من عدم وجود خطأ من Supabase
+    if (error) throw error; 
 
     console.log(data);
     
-    // 2. إزالة السطر: z = await data.json(); (هذا هو سبب الخطأ)
-    // تعامل مع data مباشرةً
-    const zz = data.contents; 
+
+    const zz = data; 
 
     for (const item of zz) {
         var xox = item.video;
