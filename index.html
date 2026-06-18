@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabinum | the serch engine that makes the web a social feed </title>
+    <title>Arabinum | the search engine that makes the web a social feed </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
   <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
                           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-                  
+
                           <script src="https://js.puter.com/v2/"></script>
                           <head>
       <meta charset="UTF-8">
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
                     <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
-                  
+
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -33,15 +33,15 @@
       width: 100%;
   }
           }
-          
+
       </style>
-      
+
       <style>
         [xpp]:hover{
           filter: hue-rotate(360deg);
         }
         [flexo]{
-  
+
 display: flex;
 flex-direction: row-reverse;
 }
@@ -62,7 +62,7 @@ flex-direction: row-reverse;
               display: flex;
               flex-direction: column;
             }
-          
+
             }
       [data-row-center]{
               display: flex;
@@ -70,7 +70,7 @@ flex-direction: row-reverse;
               justify-content: center;
               align-items: center;
             }
-        
+
           [data-hide-desktop]{
                   display: none;
               }
@@ -88,7 +88,7 @@ flex-direction: row-reverse;
               width:10rem;
 
             }
-           
+
             [data-max-size]{
               max-height: 300px;
 
@@ -105,7 +105,7 @@ flex-direction: row-reverse;
             }
           }
       </style>
-      
+
   </head>
 
     </head>
@@ -115,64 +115,53 @@ flex-direction: row-reverse;
 <div class="bg-white min-h-screen flex flex-col items-center">
    <header class="w-full flex justify-end p-4 space-x-4 text-sm">
         <a href="https://www.producthunt.com/products/arabinum?launch=arabinum" class="text-gray-600 hover:underline">About</a>
-      
+
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center -mt-20">
         <div class="mb-3" >
           <h1 class="   text-gray-800"center tlarge>Arabinum</h1>
             <p style=' font-size:20px;'>Arabinum is a  browser that turns  results into feed  </p>
-           
+
         </div>
 
         <div class="w-full max-w-3xl px-4">
             <div class="relative">
-             
-<form class="max-w-md mx-auto">   
-    <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
-    <div class="relative">
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
-        </div>
-        <input type="search" id="input" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body" placeholder="Search" required />
-        <button type="button" class="absolute end-1.5 bottom-1.5 text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search</button>
-    </div>
-</form>
-
+                <input type="text" class="w-full border border-gray-300 rounded-full py-4 px-8 focus:outline-none focus:shadow-lg" id="input" placeholder='search any thing here '>
                 <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-2">
-                   
-                   
+
+
                 </div>
             </div>
 
-            
-            <div class="flex justify-center mt-8 space-x-2">
-             
-       
 
-              
-              
+            <div class="flex justify-center mt-8 space-x-2">
+                <button class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-gray-800"id='white' > Search</button>
+
+
+
+
             </div>
         </div>
 
         <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
-                    
 
-          
-          
+
+
+
         </div>
     </main>
 
 
 </div>
-   
+
     <div  w-full  flexo style='width:95%' center>
-  
+
           <div  id="rc" w-100p     >
-     
+
           </div>
           <div id='out' nof w-100p >
-    
+
     </div>
           </div>
     <a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
@@ -191,7 +180,7 @@ flex-direction: row-reverse;
       rc.innerHTML='';
        out.innerHTML='';
       var input =document.getElementById('input').value;
-      
+
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
@@ -201,7 +190,7 @@ flex-direction: row-reverse;
           var xxoo='';
       results.forEach(item => {
 
-                
+
       var reuso=`
 
   <a href='${item.url}'>
@@ -298,8 +287,9 @@ flex-direction: row-reverse;
         });
 
 
-      
-  
+
+
+var ceor = document.getElementById('arabic').value;
 const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
 
 
@@ -307,15 +297,15 @@ const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
 const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=${apiKey}&maxResults=10`;
 
 try {
-  
+
   const response = await fetch(url);
-  
+
   if (!response.ok) {
     throw new Error(`خطأ من اليوتيوب: ${response.status}`);
   }
 
   const result = await response.json();
-  
+
   // في جوجل، النتائج تكون داخل مصفوفة اسمها items
   const vt = result.items;
 
@@ -350,9 +340,9 @@ try {
  var grok=document.getElementById('grok');
 }
  window.addEventListener("keydown", function(event) {
-  
+
   if (event.key === "Enter") {
-   
+
     white.click();
   }
 });
