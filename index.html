@@ -211,8 +211,13 @@ flex-direction: row-reverse;
       var dato='';
           var xxoo='';
       results.forEach(item => {
-
-
+var imgo='';
+ if(item.original_thumbnail_url){
+   imgo=item.original_thumbnail_url;
+ }
+        else{
+          imgo=`//image.thum.io/get/https://${item.url}/`;
+        }
       var reuso=`
 
   <a href='${item.url}'>
@@ -253,7 +258,7 @@ flex-direction: row-reverse;
           
   <a href='${item.url}'>
           <div class="mb-3 -mx-4 sm:mx-0 sm:rounded-lg overflow-hidden">
-              <img src="${item.original_thumbnail_url}"
+              <img src="${imgo}"
                     class="w-full object-cover">
           </div>
           </a>
