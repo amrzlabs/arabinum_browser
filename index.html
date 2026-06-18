@@ -216,7 +216,7 @@ flex-direction: row-reverse;
              const { mydata, myerror } = await supabase.functions.invoke('youtube', {
     body: { image: imgu, 
 
-      classes:myclasses
+      classes:'male,female'
     },
   })
   console.log(mydata)
