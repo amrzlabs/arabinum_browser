@@ -216,10 +216,10 @@ flex-direction: row-reverse;
              const { mydata, myerror } = await supabase.functions.invoke('youtube', {
     body: { image: imgu, 
 
-      classes:'male,female'
+      classes:myclasses
     },
   })
-  console.log(mydata)
+console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
 
 
           }
