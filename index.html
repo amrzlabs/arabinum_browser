@@ -213,9 +213,10 @@ flex-direction: row-reverse;
       results.forEach(item => {
 var imgo='';
  if(item.original_thumbnail_url){
-   imgo=`//image.thum.io/get/${item.url}/`;
+   imgo=item.original_thumbnail_url;
  }
         else{
+          imgo=`//image.thum.io/get/https://${item.url}/`;
           imgo=`//image.thum.io/get/${item.url}/`;
         }
       var reuso=`
