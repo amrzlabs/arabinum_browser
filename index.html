@@ -199,9 +199,18 @@ flex-direction: row-reverse;
     var white =document.getElementById('white');
       var out =document.getElementById('out');
     white.onclick= async function(){
+        var input =document.getElementById('input').value;
+          puter.print(`Thinking...`);
+        puter.ai
+            .chat(`summarize from search results  query:${input}`, {
+                model: "openai/gpt-5.2-chat",
+                tools: [{ type: "web_search" }],
+            })
+            .then(puter.print);
+    </script>
       rc.innerHTML='';
        out.innerHTML='';
-      var input =document.getElementById('input').value;
+    
 
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
