@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
-  <html lang="en" dir="ltr">
+<!DOCTYPE html>
+  <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabinum | the search engine that makes the web a social feed </title>
+    <title>Arabinum | the serch engine that makes the web a social feed </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
   <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
@@ -120,14 +120,13 @@ flex-direction: row-reverse;
 
     <main class="flex-grow flex flex-col items-center justify-center -mt-20">
         <div class="mb-3" >
-          <h1 class="   text-gray-800"center tlarge>Arabinum</h1>
-            <p style=' font-size:20px;'>Arabinum is a  browser that turns  results into feed  </p>
+          <img src='zzz.png' w-80p h-15 center>
 
         </div>
 
-        <div class="w-full max-w-3xl px-4">
+        <div class="w-full max-w-2xl px-4">
             <div class="relative">
-                <input type="text" class="w-full border border-gray-300 rounded-full py-4 px-8 focus:outline-none focus:shadow-lg" id="input" placeholder='search any thing here '>
+                <input type="text" class="w-full border border-gray-300 rounded-full py-3 px-5 focus:outline-none focus:shadow-lg" id="input" xpp>
                 <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-2">
 
 
@@ -136,8 +135,31 @@ flex-direction: row-reverse;
 
 
             <div class="flex justify-center mt-8 space-x-2">
-                <button class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-gray-800"id='white' > Search</button>
-
+                <button class="bg-white-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-white-800"id='white' > Search</button>
+          <select id="arabic" class="bg-white-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-white-800 outline-none cursor-pointer" >
+  <option value="DZ">Algeria</option>
+  <option value="BH">Bahrain</option>
+  <option value="KM">Comoros</option>
+  <option value="DJ">Djibouti</option>
+  <option value="EG" selected>Egypt</option>
+  <option value="IQ">Iraq</option>
+  <option value="JO">Jordan</option>
+  <option value="KW">Kuwait</option>
+  <option value="LB">Lebanon</option>
+  <option value="LY">Libya</option>
+  <option value="MR">Mauritania</option>
+  <option value="MA">Morocco</option>
+  <option value="OM">Oman</option>
+  <option value="PS">Palestine</option>
+  <option value="QA">Qatar</option>
+  <option value="SA">Saudi Arabia</option>
+  <option value="SO">Somalia</option>
+  <option value="SD">Sudan</option>
+  <option value="SY">Syria</option>
+  <option value="TN">Tunisia</option>
+  <option value="AE">United Arab Emirates</option>
+  <option value="YE">Yemen</option>
+</select>
 
 
 
@@ -145,9 +167,9 @@ flex-direction: row-reverse;
         </div>
 
         <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
+                      <p>Arabinum is a  browser that turns  results into feed  | powerd by <a href="https://amrzlabs.com">Amrzlabs</a></p>
 
-
-
+            <a  href='https://github.com/AMR2010M/arabinum/issues' tblue> this is beta version it may have errors please submit any issue or suggestion  here </a>
 
         </div>
     </main>
@@ -289,7 +311,7 @@ flex-direction: row-reverse;
 
 
 
-
+var ceor = document.getElementById('arabic').value;
 const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
 
 
