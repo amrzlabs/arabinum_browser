@@ -412,8 +412,10 @@ const { error } = await supabase.from('saved_wesites').insert({
 var savebtns=document.querySelectorAll(".savy");
 
 savebtns.forEach((btn) => {
+  btn.onclick=function(){
   let savedwebsite=btn.value;
   let savedimage=btn.alt;
    savesite(savedwebsite,savedimage);
+  }
 });
   </script>
