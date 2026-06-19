@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabinum | the serch engine that makes the web a social feed </title>
+    <title>Arabinum | the search engine that makes the web a social feed </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
   <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/df.js"></script>
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
@@ -383,7 +383,8 @@ try {
 
       
  async function savesite(website) {
-   if(websites){
+   if(localStorage.setItem('mywebs', JSON.stringify(websites))){
+     var websites=localStorage.setItem('mywebs', JSON.stringify(websites));
      websites.push(website)
 localStorage.setItem('mywebs', JSON.stringify(websites))
                    }
