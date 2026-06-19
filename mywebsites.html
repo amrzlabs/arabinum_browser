@@ -384,8 +384,8 @@ try {
       
  async function savesite(website) {
   
-   if(var logs=localStorage.getItem('mywebs')){
-       var websites=var logs=localStorage.getItem('mywebs');;
+   if(localStorage.getItem('mywebs')){
+       var websites=localStorage.getItem('mywebs');;
      websites.push(website)
 localStorage.setItem('mywebs', JSON.stringify(websites))
                    }
