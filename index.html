@@ -385,7 +385,7 @@ try {
  async function savesite(website) {
     
    if(localStorage.getItem('mywebs')){
-       var websites=localStorage.getItem('mywebs');;
+       var websites=JSON.parse(localStorage.getItem('mywebs'));;
      websites.push(website)
 localStorage.setItem('mywebs', JSON.stringify(websites))
                    }
@@ -403,7 +403,7 @@ savebtns.forEach((btn) => {
   btn.onclick=function(){
   console.log('save clicked')
   let savedwebsite=btn.value;
-  let savedimage=btn.alt;
+  
    savesite(savedwebsite);
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
