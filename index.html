@@ -412,7 +412,7 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 
-      const genAI = new GoogleGenerativeAI("AIzaSyCOp0xOtUTMKHnqljcjLq_3BrRENpdsLbg");
+      const ai = new GoogleGenerativeAI("AIzaSyCOp0xOtUTMKHnqljcjLq_3BrRENpdsLbg");
   async function main() {
   const response = await ai.models.generateContent({
     model: "gemini-3.5-flash",
