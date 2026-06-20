@@ -411,7 +411,7 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      const { datar, errorr } = await supabase.functions.invoke('search', {
+      const { datar, errorr } = await supabase.functions.invoke('ai', {
     body: { query: input },
   })
 ai.innerText=datar;
