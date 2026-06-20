@@ -410,7 +410,7 @@ savebtns.forEach((btn) => {
    savesite(savedwebsite);
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
-  import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai?bundle";
+  import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai";
 
   const genAI = new GoogleGenerativeAI("AQ.Ab8RN6IL6PLZi_cpjLtIBIRIPZurMLkhBgkYYLfQmhUNVi1KTA");
     async function main() {
@@ -439,7 +439,7 @@ savebtns.forEach((btn) => {
     }
   }
 }
-
+}
 main();
       
 });
