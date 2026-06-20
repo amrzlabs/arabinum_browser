@@ -411,20 +411,10 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      async function get(que) {
-    const summary = await puter.ai.chat(`search and make an ai overview on the user query without writing source urls and in the coutry : ${ceor}:${que}`, {
-        model: "openai/gpt-5.2-chat",
-        tools: [{ type: "web_search" }],
-    });
-    
-var linkedText = Autolinker.link(summary, {
-    newWindow: true,   // فتح الرابط في صفحة جديدة
-    stripPrefix: false, // الحفاظ على "www" في النص الظاهر
-    truncate: 30        // تقصير الروابط الطويلة جداً لـ 30 حرفاً فقط
-});
-   ai.innerText=linkedText;   
-}
-      get(input)
+      const { datar, errorr } = await supabase.functions.invoke('search', {
+    body: { query: input },
+  })
+ai.innerText=datar;
 }
  window.addEventListener("keydown", function(event) {
 
@@ -435,5 +425,6 @@ var linkedText = Autolinker.link(summary, {
    
 });
 
+    
 
   </script>
