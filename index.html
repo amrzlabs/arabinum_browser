@@ -410,8 +410,35 @@ savebtns.forEach((btn) => {
    savesite(savedwebsite);
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
-  
-      
+  import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai";
+      const genAI = new GoogleGenerativeAI("AIzaSyCOp0xOtUTMKHnqljcjLq_3BrRENpdsLbg");
+  async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-3.5-flash",
+    contents: input,
+    config: {
+      tools: [{ googleSearch: {} }]
+    }
+  });
+
+  console.log(response.text);
+ai.innerText=response.text;
+  const metadata = response.candidates[0]?.groundingMetadata;
+  if (metadata?.webSearchQueries) {
+    console.log("\nSearch queries executed:");
+    for (const query of metadata.webSearchQueries) {
+      console.log(` - ${query}`);
+    }
+  }
+  if (metadata?.groundingChunks) {
+    console.log("\nSources:");
+    for (const chunk of metadata.groundingChunks) {
+      console.log(` - [${chunk.web.title}](${chunk.web.uri})`);
+    }
+  }
+}
+
+main();
 });}
       
  window.addEventListener("keydown", function(event) {
