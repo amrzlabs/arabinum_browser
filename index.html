@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
                     <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/autolinker@4.0.0/dist/autolinker.min.js"></script>
+
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -190,7 +190,6 @@ flex-direction: row-reverse;
   </html>
   <script type="module">
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { GoogleGenAI } from 'https://jsdelivr.net';
 console.log('POWERD BY AMRZ OS 1.4')
       const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
       const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
@@ -226,7 +225,6 @@ console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
 
 
           }
-      
       results.forEach(item => {
 var imgo='';
  if(item.original_thumbnail_url){
@@ -411,41 +409,17 @@ savebtns.forEach((btn) => {
    savesite(savedwebsite);
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
-
-
-
-const ai = new GoogleGenAI({ apiKey: "AIzaSyCOp0xOtUTMKHnqljcjLq_3BrRENpdsLbg" });
-
-
-async function askGeminiWithSearch(promptText) {
-    try {
-        const response = await ai.models.generateContent({
-            model: 'gemini-3.5-flash',
-            contents: promptText,
-            config: {
-            tools: [{ googleSearch: {} }]
-            }
-        });
-
-        
-        const answer = response.text;
-        console.log("overview:", answer);
-        const sources = response.candidates?.[0]?.groundingMetadata?.webSearchQueries || [];
-        console.log("Sources Checked:", sources);
-
-        return answer;
-
-    } catch (error) {
-        console.error("API Call Failed:", error);
-    }
+});
+      async function get(que) {
+    const summary = await puter.ai.chat(`search and make an ai overview on the user query without writing source urls and in the coutry : ${ceor}:${que}`, {
+        model: "openai/gpt-5.2-chat",
+        tools: [{ type: "web_search" }],
+    });
+    
+ai.innerText = summary;
 }
-
-// Example Execution
-askGeminiWithSearch(input);
-
-  
-});}
-      
+      get(input)
+}
  window.addEventListener("keydown", function(event) {
 
   if (event.key === "Enter") {
@@ -455,5 +429,5 @@ askGeminiWithSearch(input);
    
 });
 
-    
+
   </script>
