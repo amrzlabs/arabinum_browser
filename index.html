@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
                     <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/autolinker@4.0.0/dist/autolinker.min.js"></script>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -225,6 +225,7 @@ console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
 
 
           }
+      
       results.forEach(item => {
 var imgo='';
  if(item.original_thumbnail_url){
@@ -416,7 +417,12 @@ savebtns.forEach((btn) => {
         tools: [{ type: "web_search" }],
     });
     
-ai.innerText = summary;
+var linkedText = Autolinker.link(summary, {
+    newWindow: true,   // فتح الرابط في صفحة جديدة
+    stripPrefix: false, // الحفاظ على "www" في النص الظاهر
+    truncate: 30        // تقصير الروابط الطويلة جداً لـ 30 حرفاً فقط
+});
+   ai.innerText=linkedText;   
 }
       get(input)
 }
