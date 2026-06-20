@@ -411,11 +411,7 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      const { datar, errorr } = await supabase.functions.invoke('ai', {
-    body: { query: input },
-  })
-ai.innerText=datar;
-}
+      
  window.addEventListener("keydown", function(event) {
 
   if (event.key === "Enter") {
@@ -424,7 +420,37 @@ ai.innerText=datar;
   }
    
 });
+import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai?bundle";
 
-    
+  const genAI = new GoogleGenerativeAI("AQ.Ab8RN6IL6PLZi_cpjLtIBIRIPZurMLkhBgkYYLfQmhUNVi1KTA");
+    async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-3.5-flash",
+    contents: "Who won the euro 2024?",
+    config: {
+      tools: [{ googleSearch: {} }]
+    }
+  });
+
+  console.log(response.text);
+      ai.innerText=response.text;
+
+  const metadata = response.candidates[0]?.groundingMetadata;
+  if (metadata?.webSearchQueries) {
+    console.log("\nSearch queries executed:");
+    for (const query of metadata.webSearchQueries) {
+      console.log(` - ${query}`);
+    }
+  }
+  if (metadata?.groundingChunks) {
+    console.log("\nSources:");
+    for (const chunk of metadata.groundingChunks) {
+      console.log(` - [${chunk.web.title}](${chunk.web.uri})`);
+    }
+  }
+}
+
+main();
+      
 
   </script>
