@@ -176,7 +176,7 @@ flex-direction: row-reverse;
 
 
 </div>
-
+<p w-80p blue-200  min-h-10 rad-5 id='ai' center></p>
     <div  w-full  flexo style='width:95%' center>
 
           <div  id="rc" w-100p     >
@@ -186,7 +186,6 @@ flex-direction: row-reverse;
 
     </div>
           </div>
-    <a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width=120 alt="Fazier badge" /></a>
   </body>
   </html>
   <script type="module">
@@ -203,7 +202,7 @@ console.log('POWERD BY AMRZ OS 1.4')
       rc.innerHTML='';
        out.innerHTML='';
       var input =document.getElementById('input').value;
-
+var ai =document.getElementById('ai');
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
@@ -408,6 +407,15 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
+      async function get(que) {
+    const summary = await puter.ai.chat(`search and make an ai overview on the user query:${que}`, {
+        model: "openai/gpt-5.2-chat",
+        tools: [{ type: "web_search" }],
+    });
+    
+    document.getElementById("ai").innerText = overview;
+}
+      get(input)
 }
  window.addEventListener("keydown", function(event) {
 
@@ -415,6 +423,7 @@ savebtns.forEach((btn) => {
 
     white.click();
   }
+   
 });
 
 
