@@ -191,13 +191,10 @@ flex-direction: row-reverse;
 
   
 </div>
-        <div id="it" rows   style="overflow-x: scroll;  " mb-5 w-full> 
+        <div id="it" rows   style="overflow-x: scroll;  " mb-5 w-90p center > 
           
  
-               <div h-15 w-full class='rounded-md' red mr-1 ></div>
-                <div h-15 w-full class='rounded-md' red mr-1 ></div>
-             <div h-15 w-full class='rounded-md' red mr-1 ></div>
-             <div h-15 w-full class='rounded-md' red mr-1 ></div>
+        
       
           
       </div>
@@ -435,45 +432,7 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      const shurl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&videoDuration=short&key=${apiKey}&maxResults=5`;
-   try {
-
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`خطأ من اليوتيوب: ${response.status}`);
-  }
-
-  const sresult = await response.json();
-
-  // في جوجل، النتائج تكون داخل مصفوفة اسمها items
-  const svt = sresult.items;
-
-  for (const item of svt) {
-    // استخراج بيانات الفيديو من المسارات الجديدة لجوجل
-    const stitle = item.snippet.title;
-    const sdescription = item.snippet.description; // الوصف الجديد
-    const sthumbnailUrl = item.snippet.thumbnails.high.url; // أعلى جودة متوفرة في البحث
-    const svideoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
-
-    const videoxe = `
-
-    <div h-8 w-5 class='rounded-md' style='background-img:url('${sthumbnailUrl}') ;'>
-      </div>
-
-    `
-
-    it.innerHTML += videoxe;
-    console.log(item);
-  }
-  document.getElementById('rc').scrollIntoView({ 
-    behavior: 'smooth', 
-    block: 'start' 
-});
-
-} catch (error) {
-  console.error("حدث خطأ أثناء جلب البيانات:", error);
-}
+   
 }
  window.addEventListener("keydown", function(event) {
 
