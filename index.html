@@ -433,21 +433,21 @@ savebtns.forEach((btn) => {
     throw new Error(`خطأ من اليوتيوب: ${response.status}`);
   }
 
-  const result = await response.json();
+  const sresult = await response.json();
 
   // في جوجل، النتائج تكون داخل مصفوفة اسمها items
-  const vt = result.items;
+  const svt = sresult.items;
 
-  for (const item of vt) {
+  for (const item of svt) {
     // استخراج بيانات الفيديو من المسارات الجديدة لجوجل
-    const title = item.snippet.title;
-    const description = item.snippet.description; // الوصف الجديد
-    const thumbnailUrl = item.snippet.thumbnails.high.url; // أعلى جودة متوفرة في البحث
-    const videoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
+    const stitle = item.snippet.title;
+    const sdescription = item.snippet.description; // الوصف الجديد
+    const sthumbnailUrl = item.snippet.thumbnails.high.url; // أعلى جودة متوفرة في البحث
+    const svideoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
 
     const videoxe = `
-    <a href='/yt?id=${videoId}'>
-    <div h-8 w-30p class='rounded-md' style='background-img:url('${thumbnailUrl}') ;'>
+    <a href='/yt?id=${svideoId}'>
+    <div h-8 w-30p class='rounded-md' style='background-img:url('${sthumbnailUrl}') ;'>
       </div>
       </a>
     `
