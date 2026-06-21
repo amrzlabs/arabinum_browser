@@ -381,6 +381,11 @@ try {
     out.innerHTML += videox;
     console.log(item);
   }
+  document.getElementById('rc').scrollIntoView({ 
+    behavior: 'smooth', 
+    block: 'start' 
+});
+
 } catch (error) {
   console.error("حدث خطأ أثناء جلب البيانات:", error);
 }
