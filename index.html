@@ -202,11 +202,11 @@ console.log('POWERD BY AMRZ OS 1.4')
       var out =document.getElementById('out');
      
     white.onclick= async function(){
-          var ai =document.getElementById('ai');
+         
       var ceor = document.getElementById('arabic').value;
       rc.innerHTML='';
        out.innerHTML='';
-      ai.innerText='Thinking please wait for AI over view....';
+   
       var input =document.getElementById('input').value;
 
   const { data, error } = await supabase.functions.invoke('search', {
