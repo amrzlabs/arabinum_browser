@@ -365,15 +365,17 @@ try {
 
     const videox = `
     <div class="flex justify-center" columns>
-      <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 " b-black>
+      <div class="rounded-lg shadow-lg bg-white max-w-sm mb-4 " b-black nof>
           <a href="/yt?id=${videoId}" w-full h-40p center>
               <img src='${thumbnailUrl}' class='rad-2 mt-2' w-90p h-100p center>
           </a>
           <div class="p-6">
+          <a href='/yt?id=${videoId}'>
               <h5 class="text-gray-900 text-xl font-medium mb-2">${title}</h5>
               <p class="text-gray-700 text-base mb-4">
                   ${description}
               </p>
+              </a>
           </div>
       </div>
     </div>`;
