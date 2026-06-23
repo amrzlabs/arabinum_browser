@@ -204,7 +204,8 @@ flex-direction: row-reverse;
   </body>
   </html>
   <script type="module">
-   import { pipeline } from 'https://unpkg.com';
+   import { pipeline } from 'https://esm.sh';
+
 const classifier = await pipeline('zero-shot-classification', 'Xenova/bge-small-en-v1.5');
 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
