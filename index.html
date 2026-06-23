@@ -202,8 +202,9 @@ flex-direction: row-reverse;
           </div>
       
      <script type="module">
-   import huggingfacetransformers from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/+esm'
-  const pipeline = huggingfacetransformers.pipeline;
+  import { pipeline } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0/+esm'
+
+ 
 const classifier = await pipeline('zero-shot-classification', 'Xenova/bge-small-en-v1.5');
 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
