@@ -206,8 +206,8 @@ flex-direction: row-reverse;
      <script type="module">
 import { pipeline } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.2/+esm';
 const classifier = await pipeline(
-  'text-classification',
-  'Xenova/distilbert-base-uncased-finetuned-sst-2-english'
+  'zero-shot-classification',
+  'MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli'
 );
 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
