@@ -241,7 +241,8 @@ const result = await classifier(input,harams);
             confirmButtonColor: '#3085d6'
         })
           isharam=true;
-          break
+          break;
+          console.log('this is haram its related to'+haram)
         }
       }
 for(const score of scores){    
@@ -284,6 +285,7 @@ console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
 
 
           }
+  
       results.forEach(item => {
 var imgo='';
  if(item.original_thumbnail_url){
