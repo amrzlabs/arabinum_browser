@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabinum | the search engine that makes the web a social feed </title>
+    <title>متصفح يحول النتائج الي منشورات|ارابينيوم </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
 
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
@@ -224,47 +224,17 @@ console.log('POWERD BY AMRZ OS 1.7')
 const result = await classifier(
 input, 
 [
-  "sex",
-  "porn",
-  "pornography",
-  "erotic",
-  "gambling",
-  "betting",
-  "casino",
-  "alcohol",
-  "wine",
-  "liquor",
-  "drugs",
-  "narcotics",
-  "suicide",
-  "magic",
-  "witchcraft",
-  "atheism",
- 
-
+  "sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "sexe", "pornographie", "érotique", "sexo", "pornografía", "erótico", "porno", "pornografie", "erotisch", "секс", "порно", "эротика", "سکس", "پورنو", "اروتیک", "性", "色情", "色欲", "セックス", "ポルノ", "エロティック",
+  "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "jeux d'argent", "paris", "apuestas", "juego", "glücksspiel", "wetten", "азартные игры", "ставки", "казино", "قمار", "شرط‌بندی", "کازینو", "赌博", "博彩", "赌场", "ギャンブル", "賭け", "カジノ",
+  "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "alcool", "vin", "liqueur", "drogue", "stupéfiants", "alcohol", "vino", "licor", "drogas", "narcóticos", "alkohol", "wein", "spirituosen", "drogen", "rauschgift", "алкоголь", "вино", "наркотики", "الکل", "شراب", "مواد مخدر", "酒精", "酒", "药物", "毒品", "アルコール", "ワイン", "薬物", "麻薬",
+  "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد", "suicide", "magie", "sorcellerie", "athéisme", "suicidio", "magia", "brujería", "ateísmo", "selbstmord", "magie", "hexerei", "atheismus", "самоубийство", "магия", "колдовство", "атеизм", "خودکشی", "جادو", "الحاد", "自杀", "魔法", "巫术", "无神论", "自殺", "魔法", "魔術", "無神論"
 ]
 );   
       console.log(result)
-      
-if (
-  result.scores[0] > 0.6 ||
-  result.scores[1] > 0.6 ||
-  result.scores[2] > 0.6 ||
-  result.scores[3] > 0.6 ||
-  result.scores[4] > 0.6 ||
-  result.scores[5] > 0.7 ||
-  result.scores[6] > 0.7 ||
-  result.scores[7] > 0.7 ||
-  result.scores[8] > 0.7 ||
-  result.scores[9] > 0.7 ||
-  result.scores[10] > 0.7 ||
-  result.scores[11] > 0.7 ||
-  result.scores[12] > 0.7 ||
-  result.scores[13] > 0.7 ||
-  result.scores[14] > 0.7 ||
-
-  result.scores[15] > 0.7
-) {
+   var   scores=result.scores;
+      var isharam=false;
+for(const score of scores){    
+if (score>0.7) {
    Swal.fire({
             title: 'Blocked!',
             text: 'This query  seems to be haram  please try again with something halal',
@@ -272,10 +242,11 @@ if (
             confirmButtonText: 'OK',
             confirmButtonColor: '#3085d6'
         })
+   isharam=true;
+break;
 }
-else{
-      
-
+}
+if(isharam){
  
       var ceor = document.getElementById('arabic').value;
       rc.innerHTML='';
@@ -497,7 +468,7 @@ savebtns.forEach((btn) => {
 }
 
 }
- 
+    }
  window.addEventListener("keydown", function(event) {
 
   if (event.key === "Enter") {
