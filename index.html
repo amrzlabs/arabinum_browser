@@ -170,7 +170,10 @@ flex-direction: row-reverse;
 
             </div>
         </div>
-
+   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+<dotlottie-wc center id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:50px;height:50px;display:none" autoplay loop></dotlottie-wc>
+          
+ 
         <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
                       <p>Arabinum is a  browser that turns  results into feed  | powerd by <a href="https://amrzlabs.com">Amrzlabs</a></p>
 
@@ -193,10 +196,7 @@ flex-direction: row-reverse;
 
   
 </div>
-       <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
-<dotlottie-wc center id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:50px;height:50px;display:none" autoplay loop></dotlottie-wc>
-          
- 
+    
         
       
           
@@ -221,8 +221,9 @@ console.log('POWERD BY AMRZ OS 1.7')
       var out =document.getElementById('out');
      var it =document.getElementById('it');
     var loading =document.getElementById('loading');
-       loading.style.display='block';
+     
     white.onclick= async function(){
+        loading.style.display='block';
         var input =document.getElementById('input').value;
       var harams=["sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد"]
 
