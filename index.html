@@ -221,6 +221,7 @@ console.log('POWERD BY AMRZ OS 1.7')
     var loading =document.getElementById('loading');
      
     white.onclick= async function(){
+      white.disable='true';
         loading.style.display='block';
         var input =document.getElementById('input').value;
       var harams=["sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد"]
@@ -449,6 +450,7 @@ try {
 } catch (error) {
   console.error("حدث خطأ أثناء جلب البيانات:", error);
 }
+        white.disable='false';
  var grok=document.getElementById('grok');
 
       
