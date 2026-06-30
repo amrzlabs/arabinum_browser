@@ -254,7 +254,7 @@ console.log('POWERD BY AMRZ OS 1.7')
        out.innerHTML='';
    
     
-
+if(!isharam){
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
@@ -440,7 +440,8 @@ try {
 }
          white.style.display='block';
  var grok=document.getElementById('grok');
- loading.style.display='none';
+ loading.style.display='none';.
+}
 }
     
  window.addEventListener("keydown", function(event) {
