@@ -12,7 +12,7 @@
 
 
 
-                     
+
                           <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,150 +27,194 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "x8gk2ue9d0");
 </script>
-    <style>
-        @media(max-width:780px){
-            [data-hidden]{
-                display: none;
-            }
-            [data-full-width]{
-                width: 100%;
-            }
-        }
+      <style>
+          @media(max-width:780px){
+  [data-hidden]{
+      display: none;
+  }
+  [data-full-width]{
+      width: 100%;
+  }
+          }
 
+      </style>
+
+      <style>
         [xpp]:hover{
-            filter: hue-rotate(360deg);
+          filter: hue-rotate(360deg);
         }
         [flexo]{
-            display: flex;
-            flex-direction: row-reverse;
-        }
-        
-        @media(max-width:900px){
-            [flexo]{
-                display: flex;
-                flex-direction: column;
-            }
-        }
-        
-        @media(min-width:700px){
-            [data-max-size]{
-                height: 100%;
-                width: 20%;
-            }
-            [data-flex-column]{
-                display: flex;
-                flex-direction: column;
-            }
-        }
-        
-        [data-row-center]{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
 
-        [data-hide-desktop]{
-            display: none;
-        }
+display: flex;
+flex-direction: row-reverse;
+}
+            @media(max-width:900px){
 
-        @media(max-width:700px){
-            [data-hide-mobile]{
-                display: none;
+ [flexo]{
+              display: flex;
+              flex-direction: column;
             }
-            [data-hide-desktop]{
-                display: block;
             }
+          @media(min-width:700px){
+
+    [data-max-size]{
+              height: 100%;
+            width: 20%;
+            }
+              [data-flex-column]{
+              display: flex;
+              flex-direction: column;
+            }
+
+            }
+      [data-row-center]{
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+            }
+
+          [data-hide-desktop]{
+                  display: none;
+              }
+
+          @media(max-width:700px){
+
+              [data-hide-mobile]{
+                  display: none;
+              }
+              [data-hide-desktop]{
+                  display: block;
+              }
             [data-square-size]{
-                height: 10rem;
-                width:10rem;
+              height: 10rem;
+              width:10rem;
+
             }
+
             [data-max-size]{
-                max-height: 300px;
+              max-height: 300px;
+
             }
             [data-flex-column]{
-                display: flex;
-                flex-direction: row;
+              display: flex;
+              flex-direction: row;
             }
             [data-row-center]{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
             }
-        }
-    </style>
-</head>
-<body>
+          }
+      </style>
 
-<div class="bg-gray-50 min-h-screen flex flex-col items-center font-sans">
-    <header class="w-full flex justify-end p-4 space-x-4 text-sm">
-        </header>
+  </head>
 
-    <main class="flex-grow flex flex-col items-center justify-center -mt-16 w-full max-w-4xl px-4">
-        <div class="mb-6 flex justify-center w-full">
-            <img src='zzz.png' style='height:18rem' class="max-w-full object-contain" alt="Logo">
+    </head>
+
+  </head>
+  <body>
+
+
+
+<div class="bg-white min-h-screen flex flex-col items-center">
+   <header class="w-full flex justify-end p-4 space-x-4 text-sm">
+
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center -mt-20">
+        <div class="mb-3" >
+          <img src='zzz.png' style='height:18rem' w-full center>
+
         </div>
+
+
 
         <div class="w-full max-w-2xl px-4">
-            <div class="relative w-full">
-                <input type="text" class="w-full border border-gray-300 rounded-full py-3.5 px-6 focus:outline-none focus:border-blue-400 focus:shadow-lg transition-all text-gray-800" id="input" placeholder='search for anything'>
+            <div class="relative">
+                <input   type="text" class="w-full border border-gray-300 rounded-full py-3 px-5 focus:outline-none focus:shadow-lg" id="input" placeholder='search for anything'>
                 <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-2">
-                    </div>
+
+
+                </div>
             </div>
 
-            <div class="flex justify-center mt-6 space-x-3">
-                <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2 rounded-full text-sm font-medium transition-colors border border-transparent hover:border-gray-300" id='white'>Search</button>
-                
-                <select id="arabic" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-full text-sm font-medium outline-none cursor-pointer border border-transparent hover:border-gray-300 transition-colors" style='display:none'>
-                    <option value="DZ">Algeria</option>
-                    <option value="BH">Bahrain</option>
-                    <option value="KM">Comoros</option>
-                    <option value="DJ">Djibouti</option>
-                    <option value="EG" selected>Egypt</option>
-                    <option value="IQ">Iraq</option>
-                    <option value="JO">Jordan</option>
-                    <option value="KW">Kuwait</option>
-                    <option value="LB">Lebanon</option>
-                    <option value="LY">Libya</option>
-                    <option value="MR">Mauritania</option>
-                    <option value="MA">Morocco</option>
-                    <option value="OM">Oman</option>
-                    <option value="PS">Palestine</option>
-                    <option value="QA">Qatar</option>
-                    <option value="SA">Saudi Arabia</option>
-                    <option value="SO">Somalia</option>
-                    <option value="SD">Sudan</option>
-                    <option value="SY">Syria</option>
-                    <option value="TN">Tunisia</option>
-                    <option value="AE">United Arab Emirates</option>
-                    <option value="YE">Yemen</option>
-                </select>
+
+            <div class="flex justify-center mt-8 space-x-2">
+                <button class="bg-white-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-white-800"id='white' > Search</button>
+          <select   id="arabic" class="bg-white-100 hover:bg-gray-200 px-4 py-2 rounded text-sm text-white-800 outline-none cursor-pointer" style='display:none'>
+  <option value="DZ">Algeria</option>
+  <option value="BH">Bahrain</option>
+  <option value="KM">Comoros</option>
+  <option value="DJ">Djibouti</option>
+  <option value="EG" selected>Egypt</option>
+  <option value="IQ">Iraq</option>
+  <option value="JO">Jordan</option>
+  <option value="KW">Kuwait</option>
+  <option value="LB">Lebanon</option>
+  <option value="LY">Libya</option>
+  <option value="MR">Mauritania</option>
+  <option value="MA">Morocco</option>
+  <option value="OM">Oman</option>
+  <option value="PS">Palestine</option>
+  <option value="QA">Qatar</option>
+  <option value="SA">Saudi Arabia</option>
+  <option value="SO">Somalia</option>
+  <option value="SD">Sudan</option>
+  <option value="SY">Syria</option>
+  <option value="TN">Tunisia</option>
+  <option value="AE">United Arab Emirates</option>
+  <option value="YE">Yemen</option>
+</select>
+
+
             </div>
 
-            <div class="flex flex-wrap justify-center items-center mt-6 text-xs text-gray-500 gap-2 leading-relaxed">
+            <div class="flex flex-wrap justify-center items-center mt-4 text-xs text-gray-500 gap-2">
                 <span>Try searching for:</span>
-                <a href="#" onclick="document.getElementById('input').value='FIFA World Cup 2026'; return false;" class="text-blue-600 hover:underline font-medium">FIFA World Cup 2026</a>
+                <a href="#" onclick="document.getElementById('input').value='FIFA World Cup 2026'; return false;" class="text-blue-500 hover:underline">FIFA World Cup 2026</a>
                 <span>•</span>
-                <a href="#" onclick="document.getElementById('input').value='iphone 17 pro max'; return false;" class="text-blue-600 hover:underline font-medium">iphone 17 pro max</a>
+                <a href="#" onclick="document.getElementById('input').value='iphone 17 pro max'; return false;" class="text-blue-500 hover:underline">iphone 17 pro max</a>
                 <span>•</span>
-                <a href="#" onclick="document.getElementById('input').value='xiaomi car '; return false;" class="text-blue-600 hover:underline font-medium">xiaomi car</a>
+                <a href="#" onclick="document.getElementById('input').value='xiaomi car '; return false;" class="text-blue-500 hover:underline">xiaomi car</a>
                 <span>•</span>
-                <a href="#" onclick="document.getElementById('input').value='laravel'; return false;" class="text-blue-600 hover:underline font-medium">laravel</a>
+                <a href="#" onclick="document.getElementById('input').value='github libraries trending'; return false;" class="text-blue-500 hover:underline">github libraries trending</a>
+                <a href="#" onclick="document.getElementById('input').value='laravel'; return false;" class="text-blue-500 hover:underline">laravel</a>
+
             </div>
         </div>
+   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+<dotlottie-wc center id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:150px;height:100px;display:none" autoplay loop></dotlottie-wc>
 
-        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
-        <div class="flex justify-center w-full mt-4">
-            <dotlottie-wc id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:150px;height:100px;display:none" autoplay loop></dotlottie-wc>
-        </div>
-          
-        <div class="mt-12 text-center text-sm text-gray-500 max-w-lg px-4 space-y-2">
-            <p>Arabinum is a browser that turns results into feed | powered by <a href="https://amrzlabs.com" class="text-blue-600 hover:underline font-medium">Amrzlabs</a></p>
-            <a href='https://chromebestore.google.com/detail/pordaai-blur-haram-object/ofhlminijomemliahkjjbgcbfoimjiaj' class="block text-blue-600 hover:underline font-medium mt-1">Need to blur haram content? download porda ai free extension</a>
+
+        <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
+                      <p>Arabinum is a  browser that turns  results into feed  | powerd by <a href="https://amrzlabs.com">Amrzlabs</a></p>
+
+            <a  href='https://chromebestore.google.com/detail/pordaai-blur-haram-object/ofhlminijomemliahkjjbgcbfoimjiaj' tblue> Need  to blur haram content? download porda ai free extension </a>
+
         </div>
     </main>
 </div>
+
+    <div  w-full  flexo style='width:95%' center>
+
+          <div  id="rc" w-100p     >
+
+          </div>
+          <div id='out' nof w-100p >
+
+    </div>
+
+
+</div>
+
+
+
+
+      </div>
+
+          </div>
      <script type="module">
 
 
@@ -184,16 +228,16 @@ console.log('POWERD BY AMRZ OS 1.7')
       var out =document.getElementById('out');
      var it =document.getElementById('it');
     var loading =document.getElementById('loading');
-     
+
     white.onclick= async function(){
       white.style.display='none';
         loading.style.display='block';
         var input =document.getElementById('input').value;
       var harams=["sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد"]
 
-  
-      
- 
+
+
+
       var isharam=false;
       for(const haram of harams){
         if(input.includes(haram)){
@@ -207,18 +251,18 @@ console.log('POWERD BY AMRZ OS 1.7')
           isharam=true;
        loading.style.display='none';
           break;
-         
-          
+
+
         }
       }
 
 
- 
+
       var ceor = document.getElementById('arabic').value;
       rc.innerHTML='';
        out.innerHTML='';
-   
-    
+
+
 if(!isharam){
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
@@ -239,17 +283,17 @@ console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
 
 
           }
-  
+
       results.forEach(item => {
 var imgo='';
  if(item.original_thumbnail_url){
    imgo=item.original_thumbnail_url;
  }
         else{
-       
+
           imgo=`https://api.apiflash.com/v1/urltoimage?access_key=f48f49cb2f6a4c8b9752dd69ce9ab66b&wait_until=page_loaded&url=${item.url}/`;
         }
-      
+
       var reuso=`
 
   <a href='${item.url}'>
@@ -408,17 +452,17 @@ try {
  loading.style.display='none';
 }
 }
-    
+
  window.addEventListener("keydown", function(event) {
 
   if (event.key === "Enter") {
 
     white.click();
   }
-   
+
 });
  async function savesite(website) {
-    
+
    if(localStorage.getItem('mywebs')){
        var websites=JSON.parse(localStorage.getItem('mywebs'));;
      websites.push(website)
@@ -429,23 +473,22 @@ localStorage.setItem('mywebs', JSON.stringify(websites))
              websites.push(website)
 localStorage.setItem('mywebs', JSON.stringify(websites))
       }
-      
+
  }
-     
+
 var savebtns=document.querySelectorAll(".savy");
 
 savebtns.forEach((btn) => {
   btn.onclick=function(){
   console.log('save clicked')
   let savedwebsite=btn.value;
-  
+
    savesite(savedwebsite);
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-    
+
   </script>
 
   </body>
   </html>
- 
