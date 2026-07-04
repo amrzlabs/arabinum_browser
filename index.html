@@ -265,7 +265,7 @@ console.log('POWERD BY AMRZ OS 1.7')
 
 if(!isharam){
 	
-		const url = `https://soundcloud-scraper1.p.rapidapi.com/api/tracks/search?query=${input}`;
+		const urlsd = `https://soundcloud-scraper1.p.rapidapi.com/api/tracks/search?query=${input}`;
 const options = {
 	method: 'GET',
 	headers: {
@@ -276,7 +276,7 @@ const options = {
 };
 
 try {
-	const response = await fetch(url, options);
+	const response = await fetch(urlsd, options);
 	const result = await response.json();
 	var tracks=result.data.tracks;
 	console.log(result);
@@ -322,10 +322,10 @@ for (let track of tracks) {
 
 async function searchGitHub(query) {
  
-  const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&per_page=3`;
+  const urls = `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&per_page=3`;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(urls);
     
     if (!response.ok) {
       throw new Error(`GitHub API Error: ${response.status}`);
@@ -552,11 +552,11 @@ const apiKey = 'AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc';
 
 
 
-const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=${apiKey}&maxResults=30`;
+const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=${apiKey}&maxResults=30`;
 
 try {
 
-  const response = await fetch(url);
+  const response = await fetch(urlyt);
 
   if (!response.ok) {
     throw new Error(`خطأ من اليوتيوب: ${response.status}`);
