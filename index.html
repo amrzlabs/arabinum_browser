@@ -426,7 +426,7 @@ async function searchGitHub(query) {
   }
 }
 
-searchGitHub(input);
+
           async function filter(imgu){
              const { mydata, myerror } = await supabase.functions.invoke('youtube', {
     body: { img: imgu, 
@@ -628,7 +628,24 @@ localStorage.setItem('mywebs', JSON.stringify(websites))
              websites.push(website)
 localStorage.setItem('mywebs', JSON.stringify(websites))
       }
+const urla = 'https://real-time-amazon-data.p.rapidapi.com/search?query=Phone&page=1&country=eg&sort_by=RELEVANCE&product_condition=NEW&is_prime=false&deals_and_discounts=NONE&language=ar_AE';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
+		'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
 
+try {
+	const response = await fetch(urla, options);
+	const result = await response.json();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+	 
  }
 
 var savebtns=document.querySelectorAll(".savy");
