@@ -572,12 +572,12 @@ const options = {
 
 try {
 	const response = await fetch(url, options);
-	const result = await response.text();
+	const result = await response.json();
 	console.log(result);
-	let it = document.getElementById('it');
+	
 let index = 0; 
 
-for (let track of response) {
+for (let track of result) {
     if (index > 3) {
         break; 
     }
