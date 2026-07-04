@@ -623,22 +623,6 @@ try {
 	console.error(error);
 }
 }
-	
-	 
- }
-
-var savebtns=document.querySelectorAll(".savy");
-
-savebtns.forEach((btn) => {
-  btn.onclick=function(){
-  console.log('save clicked')
-  let savedwebsite=btn.value;
-
-   savesite(savedwebsite);
-  console.log(JSON.parse(localStorage.getItem('mywebs')))
-  }
-});
-
 }
 
  window.addEventListener("keydown", function(event) {
