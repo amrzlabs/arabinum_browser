@@ -620,7 +620,7 @@ const options = {
 
 try {
 	const response = await fetch(urla, options);
-
+container.innerHtml=''
 	var fofy=await response.json();
 	var sos=fofy.data.products;
 	const container = document.getElementById('pros');
