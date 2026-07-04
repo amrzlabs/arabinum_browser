@@ -619,11 +619,12 @@ const options = {
 };
 
 try {
+		var container = document.getElementById('pros');
 	const response = await fetch(urla, options);
 container.innerHtml=''
 	var fofy=await response.json();
 	var sos=fofy.data.products;
-	var container = document.getElementById('pros');
+
 var zezo=1;
 for (const product of sos ) {
 	if(zezo>3){
