@@ -449,9 +449,7 @@ var imgo='';
  }
         else{
 
-          imgo=`http://api.screenshotlayer.com/api/capture
-    ? access_key = '126357f8bf7b53029bbcdb0cbafbea66'
-    & url =${item.url}
+          imgo=`http://api.screenshotlayer.com/api/capture? access_key = '126357f8bf7b53029bbcdb0cbafbea66' & url =encodeURI('${item.url}')
     & viewport = 1440x900
     & fullpage = 1`;
         }
