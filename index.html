@@ -449,14 +449,18 @@ var imgo='';
  }
         else{
 
-          imgo=`https://api.apiflash.com/v1/urltoimage?access_key=f48f49cb2f6a4c8b9752dd69ce9ab66b&wait_until=page_loaded&url=${item.url}/`;
+          imgo=`http://api.screenshotlayer.com/api/capture
+    ? access_key = '126357f8bf7b53029bbcdb0cbafbea66'
+    & url =${item.url}
+    & viewport = 1440x900
+    & fullpage = 1`;
         }
 
       var reuso=`
 
   <a href='${item.url}'>
 
-      <div handdrawn class="bg-white dark:bg-gray-800 border linkedin-border rounded-lg shadow-sm max-w-xl w-full overflow-hidden mb-5">
+      <div  class="bg-white dark:bg-gray-800 border linkedin-border rounded-lg shadow-sm max-w-xl w-full overflow-hidden mb-5">
         <div class="p-4">
 
           <!-- Post Header -->
@@ -492,7 +496,7 @@ var imgo='';
           
   <a href='${item.url}'>
           <div class="mb-3 -mx-4 sm:mx-0 sm:rounded-lg overflow-hidden">
-<img src='${imgo}'>
+<img src='${imgo}' width='100%'>
           </div>
           </a>
 
@@ -607,59 +611,7 @@ try {
          white.style.display='block';
  var grok=document.getElementById('grok');
  loading.style.display='none';
-		const urla = `https://real-time-amazon-data.p.rapidapi.com/search?query=${input}&page=1&country=eg&sort_by=RELEVANCE&product_condition=ALL&is_prime=false&deals_and_discounts=NONE&language=en_AE`;
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
-		'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-		'Content-Type': 'application/json'
-	}
-};
-
-try {
-		var container = document.getElementById('pros');
-	const response = await fetch(urla, options);
-container.innerHtml=''
-	var fofy=await response.json();
-	var sos=fofy.data.products;
-
-var zezo=1;
-for (const product of sos ) {
-	if(zezo>3){
-		break;
-	}
 	
-    if (product.product_price) {
-       container.innerHTML += `
-<article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-6 mr-1"handdrawn >
-    <div>
-        <img class="object-cover h-64 w-full" src="${product.product_photo}" alt="${product.product_title}" />
-    </div>
-
-    <div class="flex flex-col gap-1 mt-4 px-4 w-full">
-        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-50">${product.product_title}</h2>
-
-        <span class="font-semibold text-gray-800 dark:text-gray-50">${product.product_price}</span>
-    </div>
-
-   
-
-    <div class="mt-4 p-4 border-t border-gray-200 dark:border-gray-500">
-        <a href="${product.product_url}" target="_blank" class="w-full flex justify-between items-center font-bold cursor-pointer hover:underline text-gray-800 dark:text-gray-50">
-            <span class="text-base">buy now</span>
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-        </a>
-    </div>
-</article>`;
-		zezo++;
-    }
-}
-} catch (error) {
-	console.error(error);
-}
 }
 }
 
