@@ -275,7 +275,7 @@ if(!isharam){
 async function askGemini(userPrompt) {
   
  
-  const { data, error } = await supabase.functions.invoke('gemini', {
+  const { over, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: userPrompt },
   });
 
@@ -286,8 +286,8 @@ async function askGemini(userPrompt) {
   }
 
 
-  console.log("", data.text);
-  return data.text;
+  console.log("", over.text);
+  return over.text;
 }
 
 var asky='you are arabinum search browser ai overview writer give very stunning and impressive and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
@@ -327,7 +327,7 @@ askGemini(asky);
 
           <!-- Post Content -->
           <div class="text-sm text-primary mb-3 break-words">
-              <p>${data.text}</p>
+              <p>${over.text}</p>
           </div>
 
           <!-- Media (Optional - Example Image) -->
@@ -373,17 +373,8 @@ askGemini(asky);
 
         </div>
       </div>
-
-
           `
-        dato=dato+`
-
-        result[{
-        title:${item.title},
-        desecription:${item.description},
-        url:${item.url},
-        }]
-        `;
+     
   rc.innerHTML+=zezof;
 
   const { data, error } = await supabase.functions.invoke('search', {
