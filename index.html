@@ -275,7 +275,7 @@ if(!isharam){
 async function askGemini(userPrompt) {
   
  
-  const { over, error } = await supabase.functions.invoke('gemini', {
+  const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: userPrompt },
   });
 
@@ -286,8 +286,8 @@ async function askGemini(userPrompt) {
   }
 
 
-  console.log("", over.text);
-  return over.text;
+
+  return data.text;
 
 
 
@@ -324,7 +324,7 @@ async function askGemini(userPrompt) {
 
           <!-- Post Content -->
           <div class="text-sm text-primary mb-3 break-words">
-              <p>${over.text}</p>
+              <p>${data.text}</p>
           </div>
 
           <!-- Media (Optional - Example Image) -->
@@ -374,7 +374,7 @@ async function askGemini(userPrompt) {
      
   
 }
-	var asky='you are arabinum search browser ai overview writer give very stunning and impressive and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
+	var asky='you are arabinum search browser ai overview writer give  impressive and real time search and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
 	
 var overai=await askGemini(asky);
 	rc.innerHTML+=overai;
