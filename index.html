@@ -539,7 +539,7 @@ try {
              <iframe  center  id="iframo" handdrawn rad-1 sred
   width="80%" 
   height="168" 
-  src="https://www.youtube.com/watch?v=${videoId}" 
+  src="https://www.youtube.com/embed/${videoId}" 
   title="arabinum video player" 
   frameborder="0" 
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -593,7 +593,9 @@ for (let track of tracks) {
                 height="300" 
                 scrolling="no" 
                 frameborder="yes" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}">
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}"
+				
+				>
             </iframe>
 			  <div class="border-t linkedin-border pt-2 flex justify-around text-sm font-medium text-gray-600 nothingtext-gray-300">
               <button  id='save' aria-label="save"  value='' alt=''class="savy flex items-center space-x-1.5 hover:bg-gray-100 nothinghover:bg-gray-700 p-2 rounded w-full justify-center transition-colors duration-150">
