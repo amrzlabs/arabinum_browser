@@ -288,11 +288,8 @@ async function askGemini(userPrompt) {
 
   console.log("", over.text);
   return over.text;
-}
 
-var asky='you are arabinum search browser ai overview writer give very stunning and impressive and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
-	
-askGemini(asky);
+
 
 	  var zezof=`
 
@@ -376,7 +373,10 @@ askGemini(asky);
           `
      
   rc.innerHTML+=zezof;
-
+}
+	var asky='you are arabinum search browser ai overview writer give very stunning and impressive and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
+	
+askGemini(asky);
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
