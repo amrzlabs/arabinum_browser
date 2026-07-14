@@ -291,7 +291,14 @@ async function askGemini(userPrompt) {
 
 
 
-	  var zezof=`
+	  
+     
+  
+}
+	var asky='you are arabinum search browser ai overview writer give  impressive and real time search and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
+	
+var overai=await askGemini(asky);
+	var zezof=`
 
 
 
@@ -371,13 +378,7 @@ async function askGemini(userPrompt) {
         </div>
       </div>
           `
-     
-  
-}
-	var asky='you are arabinum search browser ai overview writer give  impressive and real time search and summarized info about query:('+input+'write ai overview of only 6 lines yet  very detailed and deep ';
-	
-var overai=await askGemini(asky);
-	rc.innerHTML+=overai;
+	rc.innerHTML+=zezof;
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
