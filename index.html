@@ -275,7 +275,7 @@ if(!isharam){
 async function askGemini(userPrompt) {
   
  
-  const { data, error } = await supabase.functions.invoke('gemini-direct', {
+  const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: userPrompt },
   });
 
