@@ -533,30 +533,20 @@ try {
     const videoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
 
     const videox = `
-    <div class="flex justify-center" columns >
-      <div class="rounded-lg shadow-lg bg-white max-w-sm mb-8 "  nof b-black shadow  >
-          <a href="/yt?id=${videoId}" w-full h-40p center>
+    
              <iframe  center  id="iframo" handdrawn rad-1 sred
   width="80%" 
-  height="168" 
+  height="220" 
   src="https://www.youtube.com/embed/${videoId}" 
   title="arabinum video player" 
-  frameborder="0" 
+  frameborder="1" 
+  shadow
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
   referrerpolicy="strict-origin-when-cross-origin" 
   allowfullscreen>
 </iframe>
-          </a>
-          <div class="p-6">
-          <a href='/yt?id=${videoId}'>
-              <h5 class="text-gray-900 text-xl font-medium mb-2">${title}</h5>
-              <p class="text-gray-700 text-base mb-4">
-                  ${description}
-              </p>
-              </a>
-          </div>
-      </div>
-    </div>`;
+       
+             `;
 
     out.innerHTML += videox;
     console.log(item);
