@@ -220,7 +220,7 @@ flex-direction: row-reverse;
           </div>
      <script type="module">
 
-navigator.geolocation.getCurrentPosition(position){
+navigator.geolocation.getCurrentPosition(position=>{
   const { latitude, longitude } = position.coords;
   console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 	  const data = await fetch(`https://open-meteo.com{latitude}&longitude=${longitude}&current=temperature_2m`);
