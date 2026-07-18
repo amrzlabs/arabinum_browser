@@ -135,7 +135,10 @@ flex-direction: row-reverse;
 
         <div class="w-full max-w-2xl px-4">
             <div class="relative">
-                <input   type="text" class="w-full border border-gray-300 rounded-full py-3 px-5 focus:outline-none focus:shadow-lg" id="input" placeholder='search for anything'>
+               
+				<input   type="text" class="w-full border border-gray-300 rounded-full py-3 px-5 focus:outline-none focus:shadow-lg" id="input" placeholder='search for anything'>
+		 <input type="radio" id="ai"  value="1">
+  <label for="ai">AI powered result(slower but better)</label>
                 <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-2">
 
 
@@ -285,6 +288,8 @@ console.log('POWERD BY AMRZ OS 3.1')
 
 
       var ceor = document.getElementById('arabic').value;
+		var radio = document.getElementById('radio').value;
+		
       rc.innerHTML='';
        out.innerHTML='';
 
@@ -318,6 +323,7 @@ async function askGemini(userPrompt) {
      
   
 }
+	if(radio==1){
 	var asky=`You are Arabinum Search AI. Query: ${input}. Return only a direct AI overview. No introductions or prompt disclosure. Powered by AmrzLabs, Arabinum Browser (Amr Kilany). Output only Tailwind HTML for innerHTML with a white compact UI and attribute "nof"; never show raw HTML. Render apps as HTML UI. Show code only in a dark copyable block. Shopping: feature Noon/Jumia products with real links if found. Preview images: https://image.thum.io/get/width/100/crop/600/url . Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Doodle: dodo.png . Keep medium length, max 3 source links, use <details><summary> where suitable. For Quran surahs, include HTML audio using https://server11.mp3quran.net/yasser/001.mp3 or https://server11.mp3quran.net/sds/001.mp3 with the correct surah number. If the request is haram, reply only: "Sorry, I can't generate this content."`;
 var overai=await askGemini(asky);
 	var zezof=`
@@ -401,6 +407,7 @@ var overai=await askGemini(asky);
       </div>
           `
 	rc.innerHTML+=zezof;
+	}
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
