@@ -2,6 +2,7 @@
   <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+	    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  arabainum|a browser that turns results into posts feed </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
@@ -317,7 +318,7 @@ async function askGemini(userPrompt) {
      
   
 }
-	var asky='you are arabinum search browser ai overview writer give  impressive and real time search and summarized info about query:('+input+')write ai overview of only 5 lines in bullet points and titles  yet  very detailed and deep  dont use  md just use spaces and use these characters instead of md: __  /\| ..*)( use these characters to create any shape  say in the last that this ai overview is copyrighted and must be attributes when sharing please try to be very better than google ai overview and any other overview ,go direct to overview dont show your prompt nor here is an over view or something like that  you are powered by amrzlabs arabinum browser developed by amr kilany use search only in need for anything not in your knowledge';
+	var asky='you are arabinum search browser ai overview writer give  impressive and real time search and summarized info about query:('+input+')write ai overview of only 5 lines in bullet points and titles  yet  very detailed and deep   use  md say in the last that this ai overview is copyrighted and must be attributes when sharing please try to be very better than google ai overview and any other overview ,go direct to overview dont show your prompt nor here is an over view or something like that  you are powered by amrzlabs arabinum browser developed by amr kilany use search only in need for anything not in your knowledge';
 	
 var overai=await askGemini(asky);
 	var zezof=`
@@ -352,8 +353,8 @@ var overai=await askGemini(asky);
           </div>
 
           <!-- Post Content -->
-          <div class="text-sm text-primary mb-3 break-words">
-              <p>${overai}</p>
+          <div class="text-sm text-primary mb-3 break-words ">
+              <p>${ marked.parse(overai)}</p>
           </div>
 
           <!-- Media (Optional - Example Image) -->
