@@ -219,8 +219,8 @@ flex-direction: row-reverse;
 
           </div>
      <script type="module">
-async function  show_weather(){
-navigator.geolocation.getCurrentPosition(position=>{
+ function  show_weather(){
+navigator.geolocation.getCurrentPosition( async position=>{
   const { latitude, longitude } = position.coords;
   console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
 	  const data = await fetch(`https://open-meteo.com{latitude}&longitude=${longitude}&current=temperature_2m`);
