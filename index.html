@@ -120,7 +120,7 @@ flex-direction: row-reverse;
 
 <div class=" min-h-screen flex flex-col items-center">
    <header class="w-full flex justify-end p-4 space-x-4 text-sm">
-
+<h1 id='we'>hello ,welcome to arabinum</h1>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center -mt-20">
@@ -219,6 +219,8 @@ flex-direction: row-reverse;
 
           </div>
      <script type="module">
+				 
+		 var we =document.getElementById('we');
 function show_weather() {
   navigator.geolocation.getCurrentPosition(async position => {
     const { latitude, longitude } = position.coords;
@@ -230,15 +232,17 @@ function show_weather() {
     );
 
     const weather = await response.json();
-
-    console.log(weather.current.temperature_2m);
+const temp=weather.current.temperature_2m;
+    
+	  we.innerText=temp;
   });
 }
 
 show_weather();
+
 		 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-console.log('POWERD BY AMRZ OS 3.0')
+console.log('POWERD BY AMRZ OS 3.1')
       const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
       const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
   var rc=document.getElementById('rc');
