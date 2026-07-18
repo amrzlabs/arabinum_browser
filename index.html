@@ -219,7 +219,7 @@ flex-direction: row-reverse;
 
           </div>
      <script type="module">
-
+async function  show_weather(){
 navigator.geolocation.getCurrentPosition(position=>{
   const { latitude, longitude } = position.coords;
   console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
@@ -227,7 +227,9 @@ navigator.geolocation.getCurrentPosition(position=>{
   const weather = await weatherRes.json();
   console.log(weatherData.current.temperature_2m);
 });
-		
+}
+		 
+	show_weather()	
 		 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 console.log('POWERD BY AMRZ OS 3.0')
