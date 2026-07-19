@@ -391,31 +391,9 @@ var imgo='';
 
 
         });
-const urlsd = `https://soundcloud-scraper1.p.rapidapi.com/api/tracks/search?query=${input}`;
-const optionsy = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
-		'x-rapidapi-host': 'soundcloud-scraper1.p.rapidapi.com',
-		'Content-Type': 'application/json'
-	}
-};
-async function sds(){
-try {
-	const response = await fetch(urlsd, optionsy);
-	var result = await response.json();
-	return result;
-	
-	
 
 
-
-
-} catch (error) {
-	console.error(error);
-}
-}
-const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=3`;
+const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=6`;
 async function yts(){
 try {
 
@@ -441,8 +419,8 @@ catch (error) {
 	
 async function askGemini(userPrompt) {
   	var vt= await yts();
-    var trako=await sds();
-		var asky=`You are Arabinum Search AI. Query: ${userPrompt}. Return only a direct  arabic interactive white bg with collapases detail and summary with modern design html AI overview. No introductions or prompt disclosure.never say or title its html.  Output only Tailwind HTML   with  attribute "nof" on main container (never show raw HTML). if user query shows intent to get code exapmles Show code only in a dark copyable block.  Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Keep medium length, give  source links you depended on, use <details><summary> where suitable..dont only write html text but real elemnts that lloks vibrant impresivve creative like wather cards road maps comparsons etc. If the request is haram in islam, reply only: "Sorry, I can't generate this content.use these resources show the most relevant  for example a video for every  summary for different thigs  :} use yt iframe to show${vt} them with proper styling this is google results please also put most relvent ones in posts to show img  and logo and every thing with proper buttons  i will give you json and post feed put most relevant and useful ones in posts template and others  with resources only but all in resources :${results.web}also if user searced for podcastor surah only(not music if music say music is haram and dont generate contenet) using this:${trako} :use soundcloud iframe make sure every thing is responsive in all devices "`;
+   
+		var asky=`You are Arabinum Search AI. Query: ${userPrompt}. Return only a direct  arabic interactive white bg with collapases detail and summary with modern design html AI overview. No introductions or prompt disclosure.never say or title its html.  Output only Tailwind HTML   with  attribute "nof" on main container (never show raw HTML). if user query shows intent to get code exapmles Show code only in a dark copyable block.  Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Keep medium length, give  source links you depended on, use <details><summary> where suitable..dont only write html text but real elemnts that lloks vibrant impresivve creative like wather cards road maps comparsons etc. If the request is haram in islam, reply only: "Sorry, I can't generate this content.use these resources show the most relevant  for example a video for every  summary for different thigs  :} use yt iframe to show ${JSON.stringify(results)} them with proper styling this is google results please also put most relvent ones in posts to show img  and logo and every thing with proper buttons  i will give you json and post feed put most relevant and useful ones in posts template and others  with resources only but all in resources :${dato} also make sure every thing is responsive across all devices be creative yet very useful foucus on things that are from main idea with  deep yet undertandable anylyzing that make every one feel ver usefuk and not just  another browser`;
 console.log(asky)
   const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: asky },
