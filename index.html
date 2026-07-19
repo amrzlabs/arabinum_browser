@@ -440,8 +440,8 @@ catch (error) {
 
 	
 async function askGemini(userPrompt) {
-  	vt= await yts();
-    trako=await sds();
+  	var vt= await yts();
+    var trako=await sds();
 		var asky=`You are Arabinum Search AI. Query: ${input}. Return only a direct  arabic interactive white bg with collapases detail and summary with modern design html AI overview. No introductions or prompt disclosure.never say or title its html.  Output only Tailwind HTML   with  attribute "nof" on main container (never show raw HTML). if user query shows intent to get code exapmles Show code only in a dark copyable block.  Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Keep medium length, give  source links you depended on, use <details><summary> where suitable..dont only write html text but real elemnts that lloks vibrant impresivve creative like wather cards road maps comparsons etc. If the request is haram in islam, reply only: "Sorry, I can't generate this content.use these resources show the most relevant  for example a video for every  summary for different thigs about topic:${vt} use yt iframe to show them with proper styling this is google results please also put most relvent ones in posts to show img  and logo and every thing with proper buttons  i will give you json and post feed put most relevant and useful ones in posts template and others  with resources only but all in resources :${results}also if user searced for podcastor surah only(not music if music say music is haram and dont generate contenet) using this:${trako} :use soundcloud iframe make sure every thing is responsive in all devices "`;
 
   const { data, error } = await supabase.functions.invoke('gemini', {
