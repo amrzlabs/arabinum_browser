@@ -219,7 +219,6 @@ flex-direction: row-reverse;
 </div>
 
 
-<a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width=250 alt="Fazier badge" /></a>
 
       </div>
 
@@ -309,17 +308,7 @@ if(!isharam){
 
 
 
-          async function filter(imgu){
-             const { mydata, myerror } = await supabase.functions.invoke('youtube', {
-    body: { img: imgu, 
-
-      classes:'male,female'
-    },
-  })
-console.log("Full Response from Roboflow:", JSON.stringify(mydata, null, 2));
-
-
-          }
+  
 
       results.forEach(item => {
 var imgo='';
@@ -489,7 +478,7 @@ for (let track of tracks) {
 } catch (error) {
 	console.error(error);
 }
-const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=${apiKey}&maxResults=15`;
+const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=5`;
 
 try {
 
