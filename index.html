@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  arabainum|a browser that turns results into posts feed </title>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/butterflycss.css">
-
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
                           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -421,7 +422,65 @@ catch (error) {
 async function askGemini(userPrompt) {
   	var vt= await yts();
    
-		var asky=`You are Arabinum Search AI. Query: ${userPrompt}. Return only a direct  arabic interactive white bg with collapases detail and summary with modern design html AI overview. No introductions or prompt disclosure.never say or title its html.  Output only Tailwind HTML   with  attribute "nof" on main container (never show raw HTML). if user query shows intent to get code exapmles Show code only in a dark copyable block.  Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Keep medium length, give  source links you depended on, use <details><summary> where suitable..dont only write html text but real elemnts that lloks vibrant impresivve creative like wather cards road maps comparsons etc. If the request is haram in islam, reply only: "Sorry, I can't generate this content.use these resources show the most relevant  for example a video for every  summary for different thigs  :} use yt iframe to show ${JSON.stringify(vt)} them with proper styling this is google results please also put most relvent ones in posts to show img  and logo and every thing with proper buttons  i will give you json and post feed put most relevant and useful ones in posts template and others  with resources only but all in resources :${dato} also make sure every thing is responsive across all devices be creative yet very useful foucus on things that are from main idea with  deep yet undertandable anylyzing that make every one feel ver usefuk and not just  another browser`;
+		var asky=`You are Arabinum Search AI. Query: ${userPrompt}. Return only a direct  arabic interactive white bg with collapases detail and summary with modern design html AI overview. No introductions or prompt disclosure.never say or title its html.  Output only Tailwind HTML   with  attribute "nof" on main container (never show raw HTML). if user query shows intent to get code exapmles Show code only in a dark copyable block.  Arabinum logo: ChatGPT%20Image%20Jun%2028,%202026,%2002_55_07%20AM.png . Keep medium length, give  source links you depended on, use <details><summary> where suitable..dont only write html text but real elemnts that lloks vibrant impresivve creative like wather cards road maps comparsons etc. If the request is haram in islam, reply only: "Sorry, I can't generate this content.use these resources show the most relevant  for example a video for every  summary for different thigs  :} use yt iframe to show ${JSON.stringify(vt)} them with proper styling this is google results please also put most relvent ones in posts to show img  and logo and every thing with proper buttons  i will give you json and post feed put most relevant and useful ones in posts template and others  with resources only but all in resources :${dato} also make sure every thing is responsive across all devices be creative yet very useful foucus on things that are from main idea with  deep yet undertandable anylyzing that make every one feel ver usefuk and not just  another browserاستخدام GSAP (أو أي محرك رسوم متحركة) ليس مفيدًا لمجرد جعل الأشياء تتحرك بشكل جميل، بل إذا استخدمته لشرح تغير الحالة أو العلاقة بين الأشياء.
+
+مثلاً في طريقة سولفاي:
+
+بدل أن يرى المستخدم:
+
+NaCl + NH3 + CO2 → NaHCO3
+
+فقط.
+
+يجعلها تجربة:
+
+يظهر خزان الملح 🧂
+تتحرك جزيئات NaCl إلى برج الكربنة
+يدخل CO₂ و NH₃ من اتجاهين
+تتكون بلورات NaHCO₃ وتترسب للأسفل
+تنتقل للفرن
+يظهر خروج CO₂ وإعادة تدويره
+
+المستخدم لا يقرأ العملية فقط، بل يراها تحدث.
+
+مثال آخر:
+
+التاريخ
+
+بدل خريطة ثابتة للدولة العثمانية:
+
+تبدأ سنة 1299
+تظهر حدود الدولة تدريجيًا
+تتحرك الجيوش على الخريطة
+تظهر المدن التي فُتحت
+يظهر القادة في الوقت المناسب
+الفيزياء
+
+شرح المحرك:
+
+بدل صورة محرك:
+
+المكبس يتحرك
+الوقود يدخل
+الاحتراق يحدث
+تنتقل الطاقة
+r هو الجزء الأهم؛ لأنه يسمح لك بجعل الصفحة تتحول إلى قصة تفاعلية: كلما نزل المستخدم تظهر مرحلة جديدة، تتحرك العناصر، وتتغير المخططات بدل أن يقرأ مقالًا ثابتًا.
+لكن هناك تحذير مهم:
+
+لا تجعل كل شيء يتحرك.
+
+أكبر خطأ في المواقع التعليمية:
+أن تصبح مثل لعبة أو عرض سينمائي.
+
+الحركة يجب أن تجيب عن سؤال:
+
+"هل هذا يجعلني أفهم شيئًا كان صعبًا فهمه بالنص؟"
+
+إذا نعم → استخدمها.
+
+إذا فقط:
+"العنوان يدخل من اليمين"
+فهي زينة فقط.`;
 console.log(asky)
   const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: asky },
