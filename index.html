@@ -11,6 +11,69 @@
                       <script src="https://cdn.jsdelivr.net/gh/AMR2010M/butterfly-css@latest/vf.js"></script>
                           <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interactive Learning</title>
+
+
+<!-- Three.js : 3D objects, engines, atoms, machines -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+<!-- GSAP : professional animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+<!-- Anime.js : simple animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
+<!-- ScrollReveal : reveal elements while scrolling -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+<!-- Lottie : animated illustrations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+
+<!-- Matter.js : physics simulation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+
+<!-- Chart.js : interactive charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<!-- D3.js : scientific visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+
+<!-- Mermaid : diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
+<!-- MathJax : mathematical equations -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<!-- Prism : code highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+
+<!-- Markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<!-- Smooth scrolling -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.0.42/lenis.min.js"></script>
+
 
 
 <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
@@ -428,7 +491,7 @@ Before generating, internally understand:
 - Knowledge level.
 - Best visual format for the topic.
 
-extract imgs in topic using thumbnails of resources provided
+extract imgs in topic using thumbnails of resources provided   make sure all imgs exist
 if resources gave error say that they are not abailable rightnow first (google/youtube)
 تاكد ان الاكواد تظهر منظمة وقابلة للنسخ ومعدولة ليست مقلوبة  ولا تجعل الصفحة ضخمة جدا بل متوسطة قدر الامكان لكي يتقبلها النظام
 في كل جزء اجعل هناك اشياء تفتج وتقفل جوا القسم:
@@ -442,10 +505,49 @@ if resources gave error say that they are not abailable rightnow first (google/y
 امثلة عملية وتطببقية
 
 ماذا يحدث لو غيرناه؟
+لو الزائر تيته فهم شئ بطريقة بصرية وليس مجرد الطريقة في اشيلء مثل كيف يعمل الكبيوتراو المحرك  افعل ما يلي:
+
 
 
 إثبات / سبب رياضي / مصدر
 
+Three.js
+GSAP
+ScrollTrigger
+Anime.js
+Lottie
+Matter.js
+D3.js
+Chart.js
+MathJax
+Mermaid
+
+المطلوب:
+- شرح الموضوع بطريقة تعليمية عميقة.
+- اجعل الصفحة مثل كتاب تفاعلي وليس مقالة.
+- استخدم Scroll storytelling.
+- كل قسم يظهر تدريجيا أثناء النزول.
+- أضف رسومات ومحاكاة تفاعلية.
+
+عند شرح شيء مادي:
+مثلا محرك، هاتف، ذرة، خلية:
+استخدم Three.js لعمل نموذج 3D يمكن تدويره.
+اجعل المكونات تنفصل عند التمرير.
+أظهر أسماء الأجزاء عند الضغط عليها.
+أضف شرحا لكل جزء.
+
+عند شرح قوانين أو أفكار:
+استخدم:
+- رسوم متحركة
+- مخططات
+- محاكاة فيزيائية
+- معادلات MathJax
+
+اجعل كل مفهوم لتجربة تفاعلية تثبت الفكرة
+
+التصميممتجاوب للهاتف
+
+أخرج الكود كاملا في ملف HTML واحد.
 Make users feel they understood the topic, not just received information.`;
 console.log(asky)
   const { data, error } = await supabase.functions.invoke('gemini', {
