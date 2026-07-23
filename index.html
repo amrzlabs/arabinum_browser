@@ -480,10 +480,26 @@ catch (error) {
 }
 
 }
+var urlo = 'https://amazon-scrapper-api3.p.rapidapi.com/products/B0BSXG8SGQ?api_key=17fd230b65a63c27854fdb057d95524c';
+var optionso = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
+		'x-rapidapi-host': 'amazon-scrapper-api3.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
 
-	
+async function amzn(){
+	const response = await fetch(urlo, optionso);
+	const result = await response.text();
+	console.log(result);
+	return result
+}
 async function askGemini(userPrompt) {
+	
   	var vt= await yts();
+	var amz= await amzn() 
    
 		var asky = `
 
@@ -562,7 +578,9 @@ ${dato}
 - Use available images from provided resources.
 - Add YouTube videos from:
 ${JSON.stringify(vt)}
-
+this is related amazon products:
+${amz}
+we are in 2026
 Create:
 - A useful posts section with image cards.
 - A resources section for additional links.
