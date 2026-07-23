@@ -493,7 +493,7 @@ const optionso = {
 
 
 async function amzn(){
-	const response = await fetch(url, options);
+	const response = await fetch(urlo, optionso);
 	const result = await response.text();
 	console.log(result);
 	return result
