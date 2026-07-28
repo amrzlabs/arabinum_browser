@@ -508,9 +508,10 @@ async function askGemini(userPrompt) {
 You are Arabinum Search AI.
 
 User Query:
-${userPrompt}
-
-Create a direct Arabic interactive AI overview page.
+------------------------------------------------
+(${userPrompt})
+------------------------------------------------
+Create a direct  interactive AI overview page. in same language of the query only
 
 Return ONLY Tailwind HTML elements and JavaScript.
 Do not output <html>, <head>, or <body>.
@@ -525,7 +526,7 @@ Design requirements:
 - Beautiful modern UI like a premium search engine answer.
 - Use Tailwind CSS classes.
 - Use real UI elements, not only text.
-- Make the answer feel like an interactive book.
+- Make the answer feel like an interactive book with imgs extracted from article thumbnails.
 - Use cards, sections, buttons, tabs, badges, timelines, comparisons, and visual layouts when useful.
 For location-based queries (travel, cities, restaurants, hotels, places):
 - Add interactive maps using iframe when useful.
@@ -561,7 +562,7 @@ Interactive elements:
   - sliders
   - comparison switches
   - copy buttons for code blocks
-
+  - any thing you can invent please be very creative
 Animation style:
 - Keep animations smooth and lightweight.
 - Use subtle transitions that improve understanding.
@@ -580,8 +581,7 @@ ${dato}
 - Use available images from provided resources.
 - Add YouTube videos from:
 ${JSON.stringify(vt)}
-this is related amazon products:
-${amz}
+
 we are in 2026
 Create:
 - A useful posts section with image cards.
@@ -678,7 +678,7 @@ Final rules:
 - Output only Tailwind HTML + JavaScript.
 - No markdown.
 - No explanations.
-- Keep the page polished, creative, responsive, and practical.
+- Keep the page polished, creative, responsive, and practical. and full of images  you make sure they exist
 `;
 
 console.log(asky)
