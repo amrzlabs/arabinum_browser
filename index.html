@@ -255,7 +255,7 @@ flex-direction: row-reverse;
    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
 <dotlottie-wc center id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:150px;height:100px;display:none" autoplay loop></dotlottie-wc>
 
-
+<h1 id='stat'></h1>
         <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
                       <p>Arabinum is a  browser that turns  results into feed  | powerd by <a href="https://amrzlabs.com">Amrzlabs</a></p>
 
@@ -322,6 +322,8 @@ console.log('POWERD BY AMRZ OS 3.1')
     var loading =document.getElementById('loading');
 
     white.onclick= async function(){
+		 var stat=document.getElementById('stat');
+		stat.innerText='gathering information from the web......'
       white.style.display='none';
         loading.style.display='block';
         var input =document.getElementById('input').value;
@@ -461,7 +463,7 @@ var imgo='';
 const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=6`;
 async function yts(){
 try {
-
+		stat.innerText='extacting youtube videos......'
   const response = await fetch(urlyt);
 
   if (!response.ok) {
@@ -494,12 +496,13 @@ const optionso = {
 
 async function amzn(){
 	const response = await fetch(urlo, optionso);
+			stat.innerText='thinking ......'
 	const result = await response.text();
 	console.log(result);
 	return result
 }
 async function askGemini(userPrompt) {
-	
+			stat.innerText='doing some magic......'
   	var vt= await yts();
 	var amz= await amzn() 
    
@@ -683,6 +686,7 @@ Final rules:
 `;
 
 console.log(asky)
+			stat.innerText='designing the page......'
   const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: asky },
   });
@@ -705,6 +709,7 @@ console.log(asky)
 }
 	if(true){
 var overai=await askGemini(input);
+				stat.innerText='final touch......'
 	var zezof=`
 ${overai}
           `
@@ -712,7 +717,7 @@ ${overai}
 	}
  
 
-
+		stat.innerText=''
 
 
 
@@ -720,7 +725,9 @@ ${overai}
 
 
          white.style.display='block';
+	
  var grok=document.getElementById('grok');
+	
  loading.style.display='none';
 	
 }
