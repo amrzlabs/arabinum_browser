@@ -323,7 +323,7 @@ console.log('POWERD BY AMRZ OS 3.1')
 
     white.onclick= async function(){
 		 var stat=document.getElementById('stat');
-		stat.innerText='gathering information from the web......'
+		stat.innerText='gathering information from the web......🤓'
       white.style.display='none';
         loading.style.display='block';
         var input =document.getElementById('input').value;
@@ -463,7 +463,7 @@ var imgo='';
 const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=6`;
 async function yts(){
 try {
-		stat.innerText='extacting youtube videos......'
+		stat.innerText='extacting youtube videos📽️......'
   const response = await fetch(urlyt);
 
   if (!response.ok) {
@@ -496,7 +496,7 @@ const optionso = {
 
 async function amzn(){
 	const response = await fetch(urlo, optionso);
-			stat.innerText='thinking ......'
+			stat.innerText='thinking ......🧠'
 	const result = await response.text();
 	console.log(result);
 	return result
@@ -504,7 +504,7 @@ async function amzn(){
 async function askGemini(userPrompt) {
 		
   	var vt= await yts();
-		stat.innerText='doing some magic......'
+		stat.innerText='doing some magic......🗯️'
 	var amz= await amzn() 
    	stat.innerText='making some touches......'
 		var asky = `
@@ -689,7 +689,7 @@ Final rules:
 `;
 
 console.log(asky)
-			stat.innerText='designing the page......'
+			stat.innerText='designing the page._this should take a minute please wait🕐....'
   const { data, error } = await supabase.functions.invoke('gemini', {
     body: { prompt: asky },
   });
@@ -712,7 +712,7 @@ console.log(asky)
 }
 	if(true){
 var overai=await askGemini(input);
-				stat.innerText='final touch......'
+				stat.innerText='final touch......🗯️'
 	var zezof=`
 ${overai}
           `
