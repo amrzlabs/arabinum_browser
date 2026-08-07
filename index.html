@@ -300,12 +300,12 @@ function show_weather() {
 const temp=weather.current.temperature_2m;
     
 	  we.innerText='weather:'+temp+' c ⛅';
-	  
+	  return temp
   });
 }
 
 show_weather();
-
+tempy=await show_weather();
 		 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 console.log('POWERD BY AMRZ OS 3.1')
@@ -507,7 +507,7 @@ async function askGemini(userPrompt) {
 		var asky = `
 
 You are Arabinum Search AI. browser book [powered by AMRZLABS and built with love by Amr kilany Made in EGYPT]
-this is your launcg today please do your best im sure u will amaze our users you are not yet known but thtis is the first glimpse of launch
+please do your best im sure u will amaze our users 
 your promised description:
 Arabinum transforms web searches into interactive AI-generated knowledge pages with organized explanations, educational videos, and smart summaries—all in one place. Learn faster, explore deeper, and spend less time opening dozens of tab
 
@@ -515,7 +515,7 @@ User Query:
 ------------------------------------------------
 (${userPrompt})
 ------------------------------------------------
-Create a direct  interactive AI overview page. in same language of the query only or as requested
+Create a direct  interactive AI overview page. in same language of the query  or as requested
 
 Return ONLY Tailwind HTML elements and JavaScript.
 Do not output <html>, <head>, or <body>.
@@ -537,6 +537,7 @@ Design requirements:
 For location-based queries (travel, cities, restaurants, hotels, places):
 - Add interactive maps using iframe when useful.
 - Use responsive map containers.
+-if the topic is for cure  or medical info make a note above that states this content  is ai-generated please revise with a doctor
 - Include location cards with address, distance, and nearby places.
 - Never make maps full screen; keep them inside cards.
 Content rules:
@@ -545,10 +546,12 @@ Content rules:
 - Make users feel they truly understood the topic.
 -use 3d z index for imgs and some elements
 Structure:
+this is not a template just examples:
 - Hero section with title and short summary.
-- AI overview card.
+- overview card.
 - Main concepts in attractive cards.
 - Use <details><summary> for expandable information.
+- add sections  that are innovative  and new and useful
 
 Inside suitable sections include detailed epxplaition  on your own:
 this is not a template just examples
@@ -561,8 +564,7 @@ this is not a template just examples
 
 Interactive elements:
 
-- Add working interactions such as:
- expandable cards
+
 
   
   make script  in script tags only
@@ -587,7 +589,7 @@ ${dato}
 - Use available images from provided resources in topic summary(thesis) and  details 
 - Add YouTube videos from:
 ${JSON.stringify(vt)}
-
+if related only to user query 
 we are in 2026
 Create:
 - A useful posts section with image cards.
@@ -595,17 +597,8 @@ Create:
 - Clear action buttons.
 API Reference (use only when needed):
 
-Weather:
-Open-Meteo
-URL:
-https://api.open-meteo.com/v1/forecast
+weather is :${tempo}
 
-Usage:
-fetch("https://api.open-meteo.com/v1/forecast?latitude=31.2&longitude=29.9&current=temperature_2m")
-.then(r=>r.json())
-.then(data=>render(data));
-
----
 
 Maps:
 OpenStreetMap Nominatim
