@@ -519,13 +519,18 @@ User Query:
 (${userPrompt})
 ------------------------------------------------
 Create a direct  interactive AI overview page. in same language of the query  or as requested
-
+dont use too much  motion for big elements   use motion for small ones  only
+try  some shapes attributes of butterfly css in some sections dont over use  and emsure its good like<div  circle>/<img heart>
 Return ONLY Tailwind HTML elements and JavaScript.
 Do not output <html>, <head>, or <body>.
 The generated code will be injected inside an existing div container.
 Never explain that you are generating HTML.
 Animations & Motion: Use spin, bounce, pulse, swing, flip, shake, grow, shrink, slide-x, and slide-y to create continuous movement; use butterfly='fly' for a butterfly-like floating effect and ball-move-1 through ball-move-5 for glowing floating orbs.
+Ensure all interactive elements work correctly, including buttons, tabs, accordions, quizzes, and copy actions.
 
+Make all functions called by inline onclick handlers globally accessible via window.
+
+Ensure generated JavaScript actually executes when HTML is injected using innerHTML.
 Dark Mode: Support automatic theme switching using dark-btn; use paired attributes such as dpurple lpurple for dark/light backgrounds and dtwhite tlblue for dark/light text colors, adapting the entire interface to the active theme.
 
 Shapes & Special Effects: Use circle, triangle, ellipse, diamond, hexagon, star, heart, message, and other clip-path attributes to create geometric shapes; use handdrawn for sketch-like styling, birthday-paper for falling confetti, and blur for visual blur effects.
