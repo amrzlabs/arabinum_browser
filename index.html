@@ -579,17 +579,16 @@ but if the topic is  something that is  neededto be show like sciific  experieme
 ### Media Playback Error Prevention
 
 When generating pages containing audio or video:
-
-- Always handle `play()` promises using `.catch()` or `try/catch`.
-- Prevent race conditions between `play()` and `pause()` calls.
-- Handle intentional `AbortError` cancellations gracefully without uncaught promise rejections.
-- When using IntersectionObserver, avoid repeated or conflicting playback commands.
-- For YouTube iframes, use `enablejsapi=1` and wait until the player is ready before sending commands.
+Media Playback Error Prevention
+When generating pages with audio or video:
+- Handle all play promises with catch or try/catch.
+- Prevent conflicts between play and pause calls.
+- Handle AbortError cancellations silently without uncaught errors.
+- Avoid repeated or conflicting playback commands in IntersectionObserver.
+- For YouTube, enable the IFrame API and wait until the player is ready before controlling it.
 - Respect autoplay restrictions and use lazy loading when appropriate.
-- Before returning code, check all media operations for unhandled promises, conflicting commands, and playback race conditions.
-
-**Priority:** Generate reliable, browser-compatible media code without sacrificing visual quality.
-
+- Check all media operations for unhandled promises and playback conflicts before returning code.
+Priority: Ensure reliable, browser-compatible media playback without sacrificing visual quality.
 The goal is to make generated pages feel like immersive cinematic experiences rather than ordinary static websites.
 
 Structure:
