@@ -461,7 +461,7 @@ var imgo='';
         });
 
  const animations=[]
-var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=awHQ7YOuVeMutCLfCI2rEEdjQxhWVpLC&limit=5");
+var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=${input}&api_key=awHQ7YOuVeMutCLfCI2rEEdjQxhWVpLC&limit=5");
 xhr.done(function(gifs) { console.log("success gifs data", gifs); }
 		
   response.data.forEach(gif => {
