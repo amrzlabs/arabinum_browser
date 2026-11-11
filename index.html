@@ -460,7 +460,19 @@ var imgo='';
 
         });
 
+ const animations=[]
+var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=awHQ7YOuVeMutCLfCI2rEEdjQxhWVpLC&limit=5");
+xhr.done(function(gifs) { console.log("success gifs data", gifs); }
+		
+  response.data.forEach(gif => {
+    animations.push(gif);
+  });
 
+  console.log(animations);
+		);
+		
+
+	
 const urlyt = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&key=AIzaSyDooa4VtVcqAkS1GZOxUpbDMzRomiY20Wc&maxResults=20`;
 async function yts(){
 try {
@@ -592,8 +604,7 @@ please put video bg in the hero section taken from best suitable yt video you fi
 - Choose videos that visually complement the specific section.
 - Prefer cinematic footage, space scenes, scientific experiments, nature, and beautiful continuous motion.
 - Background videos should enhance the experience without competing with the content.
-### Media Playback Error Prevention
-
+### Media Playback Error Preventio
 When generating pages containing audio or video:
 Media Playback Error Prevention
 When generating pages with audio or video:
@@ -646,11 +657,12 @@ For code requests:
 use some animations  with this:
 available animations:
 (Calculator.gif,
-Rocket loader.gif)
+Rocket loader.gif,${animations})
 Resources:
 - Use the provided search results only if related:
 ${dato}
 
+- put in resources only what is truly relevant  to the user  query  
 - Select the most relevant resources for posts/cards.
 -use some emojies especailly for flags and emotions  but dont overuse
 - Use available images from provided resources in topic summary(thesis) and  details 
