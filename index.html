@@ -261,6 +261,7 @@ flex-direction: row-reverse;
 <dotlottie-wc center id='loading' src="https://lottie.host/41a0ed39-4989-4520-b17b-b360d3f5485d/NQNkvLAtCu.lottie" style="width:150px;height:100px;display:none" autoplay loop></dotlottie-wc>
 
 <h1 id='stat'></h1>
+		<h1 id='hd'></h1>
         <div class="mt-8 text-center text-sm text-gray-600 max-w-lg px-4">
                      
         </div>
@@ -325,6 +326,7 @@ console.log('POWERD BY AMRZ OS 3.1')
 
     white.onclick= async function(){
 		 var stat=document.getElementById('stat');
+		 var hd=document.getElementById('hd');
 		stat.innerText='gathering information from the web......🤓'
       white.style.display='none';
         loading.style.display='block';
@@ -470,7 +472,10 @@ var xhr = $.get(
 
 xhr.done(function(response) {
   const animation = JSON.stringify(response, null, 2);
- console.log(animation)
+ console.log(animation);
+	hd.style.display='none';
+	hd.innerText=animation;
+	
 });
 
 
@@ -658,7 +663,7 @@ For code requests:
 - Keep code clean and formatted.
 use some animations  with this:
 available animations:
-(${animations})
+(${hd.textContent})
 Resources:
 - Use the provided search results only if related:
 ${dato}
