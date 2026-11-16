@@ -469,13 +469,8 @@ var xhr = $.get(
 );
 
 xhr.done(function(response) {
-  console.log("success gifs data", response);
-
-  response.data.forEach(gif => {
-    animations.push(gif);
-  });
-
-  console.log(animations);
+  const animation = JSON.stringify(response, null, 2);
+ console.log(animation)
 });
 
 
